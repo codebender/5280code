@@ -1,0 +1,15 @@
+development:
+  adapter: postgresql
+  database: code5280_development
+  host: localhost
+  pool: 5
+  username: root
+  password:
+
+test:
+  adapter: postgresql
+  database: code5280_test
+  host: localhost
+  pool: 5
+  username: root
+  password:
