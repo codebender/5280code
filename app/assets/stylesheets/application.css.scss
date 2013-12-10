@@ -29,3 +29,49 @@ nav.container {
 .fa-medium {
   font-size: 2em;
 }
+
+@mixin keyframes( $animationName )
+{
+    @-webkit-keyframes $animationName {
+        @content;
+    }
+    @-moz-keyframes $animationName {
+        @content;
+    }
+    @-o-keyframes $animationName {
+        @content;
+    }
+    @keyframes $animationName {
+        @content;
+    }
+}
+
+@include keyframes( flashgreen )
+{
+  0% {
+    background-color: green;
+  }
+  100% {
+    background-color: #999;
+  }
+}
+
+@include keyframes( flashred )
+{
+  0% {
+    background-color: red;
+  }
+  100% {
+    background-color: #999;
+  }
+}
+
+.increase {
+  animation: flashgreen 5s;
+  -webkit-animation: flashgreen 5s;
+}
+
+.decrease {
+  animation: flashred 5s;
+  -webkit-animation: flashred 5s;
+}

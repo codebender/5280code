@@ -1,11 +1,11 @@
 describe 'Menu Controller', ->
-  $scope = $location = controllerInstance = null
+  $scope = $location = null
 
   beforeEach module 'app.controllers.menu'
 
   beforeEach inject ($rootScope, $controller) ->
     $scope = $rootScope.$new()
-    controllerInstance = $controller 'menuCtrl',
+    $controller 'menuCtrl',
       $scope: $scope
 
   describe '#is_active', ->
