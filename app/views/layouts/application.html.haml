@@ -22,19 +22,19 @@
           = link_to '5280 Code', '/', class: 'navbar-brand'
         .collapse.navbar-collapse
           %ul.nav.navbar-nav
-            %li{'ng-class' => "{active:isActive('/')}" }
+            %li{'ng-class' => "{active: is_active('/')}" }
               = link_to '/' do
                 %i.fa.fa-medium.fa-home
                 Home
-            %li{'ng-class' => "{active:isActive('/meetups')}" }
+            %li{'ng-class' => "{active: is_active('/meetups')}" }
               = link_to '/meetups' do
                 %i.fa.fa-medium.fa-users
                 Meet Ups
-            %li{'ng-class' => "{active:isActive('/bitcoin')}" }
+            %li{'ng-class' => "{active: is_active('/bitcoin')}" }
               = link_to '/bitcoin' do
                 %i.fa.fa-medium.fa-bitcoin
                 Bitcoin
-            %li{'ng-class' => "{active:isActive('/fitness')}" }
+            %li{'ng-class' => "{active: is_active('/fitness')}" }
               = link_to '/fitness' do
                 %i.fa.fa-medium.fa-tachometer
                 Fitness
