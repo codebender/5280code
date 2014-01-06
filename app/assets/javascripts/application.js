@@ -16,5 +16,7 @@
 //= require angular-route
 //= require angular-animate
 //= require angular-resource
+//= require pubnub/pubnub.min
+//= require pubnub/pubnub-angular
 //= require twitter/bootstrap
 //= require_tree ./angular

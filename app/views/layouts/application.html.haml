@@ -6,61 +6,60 @@
     = csrf_meta_tags
   %body
     %header
-      %nav.container.navbar.navbar-default.navbar-fixed-top{ 'role' => 'navigation', 'ng-controller' => 'menuCtrl' }
-        .row.header
-          .col-md-offset-4.col-md-4
-            .text-center
-              Logo HERE
-              %p By Matthew Bender
-        .navbar-header
-          = button_tag class: 'navbar-toggle',
-            data: { toggle: 'collapse', target: '.navbar-collapse' } do
-            %span.sr-only Toggle Navigation
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          = link_to '5280 Code', '/', class: 'navbar-brand'
-        .collapse.navbar-collapse
-          %ul.nav.navbar-nav
-            %li{'ng-class' => "{active: is_active('/')}" }
-              = link_to '/' do
-                %i.fa.fa-medium.fa-home
-                Home
-            %li{'ng-class' => "{active: is_active('/meetups')}" }
-              = link_to '/meetups' do
-                %i.fa.fa-medium.fa-users
-                Meet Ups
-            %li{'ng-class' => "{active: is_active('/bitcoin')}" }
-              = link_to '/bitcoin' do
-                %i.fa.fa-medium.fa-bitcoin
-                Bitcoin
-            %li{'ng-class' => "{active: is_active('/fitness')}" }
-              = link_to '/fitness' do
-                %i.fa.fa-medium.fa-tachometer
-                Fitness
-          %ul.nav.navbar-nav.navbar-right
-            %li
-              = link_to 'https://github.com/MisterBender', target: '_blank' do
-                %i.fa.fa-medium.fa-github-square
-                Github
-            %li
-              = link_to 'https://twitter.com/BentSolutions', target: '_blank' do
-                %i.fa.fa-medium.fa-twitter-square
-                Twitter
-            %li
-              = link_to 'http://www.linkedin.com/in/matthewkbender', target: '_blank' do
-                %i.fa.fa-medium.fa-linkedin-square
-                LinkedIn
-            %li
-              = link_to 'http://instagram.com/bendo', target: '_blank' do
-                %i.fa.fa-medium.fa-instagram
-                Instagram
+      %nav.navbar.navbar-default.navbar-fixed-top{ 'role' => 'navigation', 'ng-controller' => 'menuCtrl' }
+        .container
+          .row.header
+            .col-md-offset-4.col-md-4
+              .text-center
+                Logo HERE
+                %p By Matthew Bender
+          .navbar-header
+            = button_tag class: 'navbar-toggle',
+              data: { toggle: 'collapse', target: '.navbar-collapse' } do
+              %span.sr-only Toggle Navigation
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+            = link_to '5280 Code', '/', class: 'navbar-brand'
+          .collapse.navbar-collapse
+            %ul.nav.navbar-nav
+              %li{'ng-class' => "{active: is_active('/')}" }
+                = link_to '/' do
+                  %i.fa.fa-medium.fa-home
+                  Home
+              %li{'ng-class' => "{active: is_active('/meetups')}" }
+                = link_to '/meetups' do
+                  %i.fa.fa-medium.fa-users
+                  Meet Ups
+              %li{'ng-class' => "{active: is_active('/bitcoin')}" }
+                = link_to '/bitcoin' do
+                  %i.fa.fa-medium.fa-bitcoin
+                  Bitcoin
+              %li{'ng-class' => "{active: is_active('/fitness')}" }
+                = link_to '/fitness' do
+                  %i.fa.fa-medium.fa-tachometer
+                  Fitness
+            %ul.nav.navbar-nav.navbar-right
+              %li
+                = link_to 'https://github.com/MisterBender', target: '_blank' do
+                  %i.fa.fa-medium.fa-github-square
+                  Github
+              %li
+                = link_to 'https://twitter.com/BentSolutions', target: '_blank' do
+                  %i.fa.fa-medium.fa-twitter-square
+                  Twitter
+              %li
+                = link_to 'http://www.linkedin.com/in/matthewkbender', target: '_blank' do
+                  %i.fa.fa-medium.fa-linkedin-square
+                  LinkedIn
+              %li
+                = link_to 'http://instagram.com/bendo', target: '_blank' do
+                  %i.fa.fa-medium.fa-instagram
+                  Instagram
     .container
-      .home{'ng-controller' => 'homeCtrl'}
-        %p
-          {{message}}
-    = yield
+      = yield
     %footer.footer
-      %p 5280Code.com
-      %p © 2012-2013 Bent Solutions, LLC All rights reserved.
+      .container
+        %p 5280Code.com
+        %p © 2012-2013 Bent Solutions, LLC All rights reserved.
     = javascript_include_tag "application"
