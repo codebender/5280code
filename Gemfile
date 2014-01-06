@@ -27,4 +27,5 @@ end
 
 group :production do
   gem 'unicorn', '~> 4.7.0'
+  gem 'rails_12factor'
 end
