@@ -28,4 +28,5 @@ end
 group :production do
   gem 'unicorn', '~> 4.7.0'
   gem 'rails_12factor'
+  gem 'ngmin-rails', '~> 0.4.0'
 end
