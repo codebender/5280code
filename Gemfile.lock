@@ -170,7 +170,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.1)
   dotenv-rails
   font-awesome-sass (~> 4.0.2)
-  haml (~> 4.0.4)
+  haml (~> 4.0.5)
   jbuilder (~> 1.5.3)
   jquery-rails (~> 2.0.1)
   ngmin-rails (~> 0.4.0)

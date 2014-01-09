@@ -19,4 +19,5 @@
 //= require pubnub/pubnub.min
 //= require pubnub/pubnub-angular
 //= require twitter/bootstrap
+//= require ui-bootstrap/ui-bootstrap-tpls-0.9.0.min
 //= require_tree ./angular

@@ -2,15 +2,27 @@ angular.module('appControllers',
 ['app.controllers.menu'
  'app.controllers.home'
  'app.controllers.bitcoin'
- 'app.controllers.fitness'
+ 'app.controllers.fitness',
+ 'app.controllers.coderwall',
  'app.directives.price'
 ])
 
-angular.module('app', ['appControllers', 'ngRoute', 'pubnub.angular.service'])
+angular.module('app', ['appControllers', 'ngRoute', 'pubnub.angular.service', 'ui.bootstrap'])
   .config ($routeProvider, $locationProvider) ->
     $routeProvider
       .when '/',
-        template: '<div ng-controller="homeCtrl">Life is good: {{bitcoin_price}}</div>'
+        template: '<div ng-controller="homeCtrl">Life is good: {{bitcoin_price}}</div>' +
+          '<div class="col-md-4 pull-right" ng-controller="coderwallCtrl">'+
+            '<h4>Coderwall Badges</h4>'+
+            '<div class="row">' +
+              '<div class="col-md-4" ng-repeat="badge in badges">' +
+                '<a href="https://coderwall.com/misterbender" tooltip-html-unsafe="<b>{{badge.name}}</b><br/>{{badge.description}}">'+
+                  '<img class="img-responsive" ng-src="{{badge.badge}}" />' +
+                '</a>' +
+                '<div class="label label-info center-block">{{badge.created | date: "MM/dd/yyyy" }}</div>' +
+              '</div>' +
+            '</div>' +
+          '</div>'
       .when '/fitness',
         template: '<b>fitness</b>'
       .when '/meetups',
