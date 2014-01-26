@@ -2,12 +2,15 @@ angular.module('appControllers',
 ['app.controllers.menu'
  'app.controllers.home'
  'app.controllers.bitcoin'
- 'app.controllers.fitness',
- 'app.controllers.coderwall',
- 'app.directives.price'
+ 'app.controllers.fitness'
+ 'app.controllers.coderwall'
 ])
 
-angular.module('app', ['appControllers', 'ngRoute', 'pubnub.angular.service', 'ui.bootstrap'])
+angular.module('appDirectives',
+['app.directives.price'
+])
+
+angular.module('app', ['appControllers', 'appDirectives', 'ngRoute', 'ui.bootstrap'])
   .config ($routeProvider, $locationProvider) ->
     $routeProvider
       .when '/',

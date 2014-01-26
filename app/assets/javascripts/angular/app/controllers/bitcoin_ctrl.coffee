@@ -1,4 +1,4 @@
-angular.module('app.controllers.bitcoin', [])
+angular.module('app.controllers.bitcoin', ['pubnub.angular.service'])
   .controller 'bitcoinCtrl', ($rootScope, $scope, PubNub) ->
     ticker_channel = 'd5f06780-30a8-4a48-a2f8-7ed181b4a13f'
     $scope.bitcoin_ticker = null
