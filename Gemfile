@@ -14,6 +14,8 @@ gem 'angularjs-rails', '~> 1.2.9'
 gem 'anjlab-bootstrap-rails', '~> 3.0.3.0', require: 'bootstrap-rails'
 gem 'font-awesome-sass', '~> 4.0.2'
 gem 'ngmin-rails', '~> 0.4.0'
+gem 'haml_coffee_assets', '~> 1.16.0'
+gem 'execjs', '~> 2.0.2'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'

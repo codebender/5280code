@@ -20,4 +20,5 @@
 //= require pubnub/pubnub-angular
 //= require twitter/bootstrap
 //= require ui-bootstrap/ui-bootstrap-tpls-0.9.0.min
+//= require hamlcoffee
 //= require_tree ./angular

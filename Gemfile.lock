@@ -52,6 +52,10 @@ GEM
       sass-rails (>= 3.1.1)
     haml (4.0.5)
       tilt
+    haml_coffee_assets (1.16.0)
+      coffee-script (~> 2.0)
+      sprockets (~> 2.0)
+      tilt (~> 1.1)
     hike (1.2.3)
     i18n (0.6.9)
     jbuilder (1.5.3)
@@ -169,8 +173,10 @@ DEPENDENCIES
   anjlab-bootstrap-rails (~> 3.0.3.0)
   coffee-rails (~> 4.0.1)
   dotenv-rails
+  execjs (~> 2.0.2)
   font-awesome-sass (~> 4.0.2)
   haml (~> 4.0.5)
+  haml_coffee_assets (~> 1.16.0)
   jbuilder (~> 1.5.3)
   jquery-rails (~> 2.0.1)
   ngmin-rails (~> 0.4.0)
