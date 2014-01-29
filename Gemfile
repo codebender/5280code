@@ -10,12 +10,15 @@ gem 'coffee-rails', '~> 4.0.1'
 gem 'jbuilder', '~> 1.5.3'
 gem 'haml', '~> 4.0.5'
 gem 'jquery-rails', '~> 2.0.1'
+
 gem 'angularjs-rails', '~> 1.2.9'
 gem 'anjlab-bootstrap-rails', '~> 3.0.3.0', require: 'bootstrap-rails'
 gem 'font-awesome-sass', '~> 4.0.2'
 gem 'ngmin-rails', '~> 0.4.0'
 gem 'haml_coffee_assets', '~> 1.16.0'
 gem 'execjs', '~> 2.0.2'
+
+gem 'fitgem', '~> 0.8.0'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'

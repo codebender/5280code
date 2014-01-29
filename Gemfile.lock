@@ -48,6 +48,8 @@ GEM
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.0.2)
+    fitgem (0.8.0)
+      oauth
     font-awesome-sass (4.0.2)
       sass-rails (>= 3.1.1)
     haml (4.0.5)
@@ -75,6 +77,7 @@ GEM
     multi_json (1.8.4)
     ngmin-rails (0.4.0)
       rails (>= 3.1)
+    oauth (0.4.7)
     pg (0.17.1)
     polyglot (0.3.3)
     pry (0.9.12.4)
@@ -174,6 +177,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.1)
   dotenv-rails
   execjs (~> 2.0.2)
+  fitgem (~> 0.8.0)
   font-awesome-sass (~> 4.0.2)
   haml (~> 4.0.5)
   haml_coffee_assets (~> 1.16.0)
