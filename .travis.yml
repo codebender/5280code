@@ -10,4 +10,5 @@ before_script:
 branches:
   only:
     - master
-    - travis_ci
+env:
+  - SECRET_KEY_BASE=FakeSecretKeyBaseForTestingOnlyAnd30PlusCharsLong
