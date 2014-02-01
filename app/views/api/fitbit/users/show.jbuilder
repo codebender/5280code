@@ -4,3 +4,4 @@ json.city @user_info.city
 json.state @user_info.state
 json.height @user_info.height
 json.weight @user_info.weight
+json.bmi @user_info.bmi

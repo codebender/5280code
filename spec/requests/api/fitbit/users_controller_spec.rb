@@ -11,6 +11,7 @@ describe 'Fitbit::UsersController API' do
       allow(user_info).to receive(:state).and_return('CA')
       allow(user_info).to receive(:height).and_return(76.75)
       allow(user_info).to receive(:weight).and_return(176.75)
+      allow(user_info).to receive(:bmi).and_return(21.09)
       allow(Fitbit::Service).to receive(:get_user_info).and_return(user_info)
 
       get '/api/fitbit/user'
@@ -22,6 +23,7 @@ describe 'Fitbit::UsersController API' do
       expect(json['state']).to eql 'CA'
       expect(json['height']).to eql 76.75
       expect(json['weight']).to eql 176.75
+      expect(json['bmi']).to eql 21.09
     end
   end
 end
