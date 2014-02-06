@@ -75,3 +75,57 @@ nav.container {
   animation: flashred 5s;
   -webkit-animation: flashred 5s;
 }
+
+#battery {
+  margin: 10px 20px 10px 10px;
+  background:#fff;
+  width:90px;
+  height:40px;
+  border-radius:2px;
+
+  &.low-battery {
+    width: 10px;
+    background: red;
+  }
+  &.medium-battery {
+    width: 45px;
+    background: yellow;
+  }
+  &.high-battery {
+    width: 85px;
+    background: lime;
+  }
+  &.full-battery {
+    background: lime;
+  }
+}
+
+#battery:before {
+  content:'';
+  display:block;
+  background:transparent;
+  border:4px solid #999;
+  margin:-5px;
+  width:100px;
+  height:50px;
+  position:absolute;
+  border-radius:2px;
+}
+
+#battery:after {
+  content:'';
+  display:block;
+  background:transparent;
+  border:2px solid #999;
+  margin:10px 93px;
+  width:10px;
+  height:20px;
+  position:absolute;
+  border-radius:2px;
+}
+
+.thin-right-border {
+  border-right: #eee solid 1px;
+}
+
+
