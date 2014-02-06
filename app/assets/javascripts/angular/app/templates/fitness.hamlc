@@ -56,10 +56,10 @@
                 %tbody
                   %tr.text-center
                     %td {{activity.steps}}
-                    %td {{activity.distance}}
+                    %td {{activity.distance}} miles
                     %td {{activity.calories_out}}
                     %td {{activity.active_calories}}
-                    %td {{activity.active_minutes}}
+                    %td {{activity.active_minutes | minutesToHours}}
       .col-md-6
         .row
           .col-md-12
@@ -76,7 +76,7 @@
                     %th.text-center Sleep Efficiency
                 %tbody
                   %tr.text-center
-                    %td {{sleep.minutes_asleep}}
-                    %td {{sleep.minutes_in_bed}}
-                    %td {{sleep.minutes_to_fall_asleep}}
+                    %td {{sleep.minutes_asleep | minutesToHours}}
+                    %td {{sleep.minutes_in_bed | minutesToHours}}
+                    %td {{sleep.minutes_to_fall_asleep | minutesToHours}}
                     %td {{sleep.efficiency}}%

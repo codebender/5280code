@@ -10,7 +10,11 @@ angular.module('appDirectives',
 ['app.directives.price'
 ])
 
-angular.module('app', ['appControllers', 'appDirectives', 'ngRoute', 'ui.bootstrap'])
+angular.module('appFilters',
+['app.filters.minutes_to_hours'
+])
+
+angular.module('app', ['appControllers', 'appDirectives', 'appFilters', 'ngRoute', 'ui.bootstrap'])
   .config ($routeProvider, $locationProvider) ->
     $routeProvider
       .when '/',
