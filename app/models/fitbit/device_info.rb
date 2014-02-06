@@ -5,7 +5,9 @@ module Fitbit
                 :device_type
 
     def initialize(args)
-      @last_sync_time = Time.parse(args[0]['lastSyncTime'])
+      Time.use_zone('Mountain Time (US & Canada)') do
+        @last_sync_time = Time.zone.parse(args[0]['lastSyncTime']).utc
+      end
       @battery_level = args[0]['battery']
       @device_type = args[0]['deviceVersion']
     end
