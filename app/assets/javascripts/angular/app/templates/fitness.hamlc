@@ -72,7 +72,7 @@
                   %tr
                     %th.text-center Asleep
                     %th.text-center In Bed
-                    %th.text-center Fell Asleep
+                    %th.text-center Fell Asleep In
                     %th.text-center Sleep Efficiency
                 %tbody
                   %tr.text-center
