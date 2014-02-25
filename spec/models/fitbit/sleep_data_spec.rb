@@ -60,10 +60,10 @@ describe Fitbit::SleepData do
   describe 'initialize' do
     it 'parses the returns api hash args' do
       sleep = Fitbit::SleepData.new(sleep_data)
-      sleep.minutes_asleep.should eql 480
-      sleep.minutes_in_bed.should eql 490
-      sleep.minutes_to_fall_asleep.should eql 10
-      sleep.efficiency.should eql 98
+      expect(sleep.minutes_asleep).to eql 480
+      expect(sleep.minutes_in_bed).to eql 490
+      expect(sleep.minutes_to_fall_asleep).to eql 10
+      expect(sleep.efficiency).to eql 98
     end
   end
 end

@@ -54,11 +54,11 @@ describe Fitbit::ActivityData do
   describe 'initialize' do
     it 'parses the returns api hash args' do
       activity_data = Fitbit::ActivityData.new(activity)
-      activity_data.steps.should eql 1234
-      activity_data.distance.should eql 1.32
-      activity_data.calories_out.should eql 2143
-      activity_data.active_calories.should eql 230
-      activity_data.active_minutes.should eql 60
+      expect(activity_data.steps).to eql 1234
+      expect(activity_data.distance).to eql 1.32
+      expect(activity_data.calories_out).to eql 2143
+      expect(activity_data.active_calories).to eql 230
+      expect(activity_data.active_minutes).to eql 60
     end
   end
 end

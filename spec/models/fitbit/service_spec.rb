@@ -30,7 +30,7 @@ describe Fitbit::Service do
         expect(Fitbit::UserInfo).to receive(:new).and_return(user_info_mock)
 
         user_info = Fitbit::Service.get_user_info
-        user_info.should eql user_info_mock
+        expect(user_info).to eql user_info_mock
       end
     end
 
@@ -51,7 +51,7 @@ describe Fitbit::Service do
         expect(Fitbit::SleepData).to receive(:new).and_return(sleep_data_mock)
 
         sleep_data = Fitbit::Service.get_sleep_data
-        sleep_data.should eql sleep_data_mock
+        expect(sleep_data).to eql sleep_data_mock
       end
     end
 
@@ -71,7 +71,7 @@ describe Fitbit::Service do
         expect(Fitbit::DeviceInfo).to receive(:new).and_return(device_info_mock)
 
         device_info = Fitbit::Service.get_device_info
-        device_info.should eql device_info_mock
+        expect(device_info).to eql device_info_mock
       end
     end
 
@@ -92,7 +92,7 @@ describe Fitbit::Service do
         expect(Fitbit::ActivityData).to receive(:new).and_return(activity_data_mock)
 
         activity_data = Fitbit::Service.get_activity_data
-        activity_data.should eql activity_data_mock
+        expect(activity_data).to eql activity_data_mock
       end
     end
   end

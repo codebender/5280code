@@ -36,19 +36,19 @@ describe Fitbit::UserInfo do
   describe 'initialize' do
     it 'parses the returns api hash args' do
       user_info = Fitbit::UserInfo.new(user_hash)
-      user_info.member_since.should eql Date.parse('2010-02-07')
-      user_info.avatar_url.should eql 'http://www.fitbit.com/defaultProfile_150_male.gif'
-      user_info.city.should eql 'San Francisco'
-      user_info.state.should eql 'CA'
-      user_info.height.should eql 76.75
-      user_info.weight.should eql 160.55
+      expect(user_info.member_since).to eql Date.parse('2010-02-07')
+      expect(user_info.avatar_url).to eql 'http://www.fitbit.com/defaultProfile_150_male.gif'
+      expect(user_info.city).to eql 'San Francisco'
+      expect(user_info.state).to eql 'CA'
+      expect(user_info.height).to eql 76.75
+      expect(user_info.weight).to eql 160.55
     end
   end
 
   describe 'bmi' do
     it 'calculates the users BMI from the height and weight' do
       user_info = Fitbit::UserInfo.new(user_hash)
-      user_info.bmi.should eql ((160.55/(76.75*76.75))*703).round(2)
+      expect(user_info.bmi).to eql ((160.55/(76.75*76.75))*703).round(2)
     end
   end
 end

@@ -17,10 +17,10 @@ describe Fitbit::DeviceInfo do
     it 'parses the returns api hash args' do
       device_info = Fitbit::DeviceInfo.new(device_data)
       Time.use_zone('Mountain Time (US & Canada)') do
-        device_info.last_sync_time.should eql Time.zone.parse('2011-08-26T11:19:03.000')
+        expect(device_info.last_sync_time).to eql Time.zone.parse('2011-08-26T11:19:03.000')
       end
-      device_info.battery_level.should eql 'High'
-      device_info.device_type.should eql 'Ultra'
+      expect(device_info.battery_level).to eql 'High'
+      expect(device_info.device_type).to eql 'Ultra'
     end
   end
 end
