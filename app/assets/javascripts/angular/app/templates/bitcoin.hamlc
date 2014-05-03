@@ -1,25 +1,25 @@
 %h1 Live Bitcoin Price
 %p.lead
   Streamed with
-  %a(href="http://pubnub.com")
-    PubNum
+  %a(href="http://pusher.com/")
+    Pusher
   from
-  %a(href="http://mtgox.com")
-    Mt.Gox
+  %a(href="https://www.bitstamp.net")
+    Bitstamp
 %div(ng-controller="bitcoinCtrl")
   .well.col-md-6
     .pull-right
       %small.text-muted
-        Last Updated: {{bitcoin_ticker.now/1000 | date:"medium"}}
+        Last Updated: {{bitcoin_ticker.last_traded_at | date:"medium"}}
     .row
       .col-md-12
         %h3
           Last Price:
-          %price(current="{{bitcoin_ticker.last.value}}")
+          %price(current="{{bitcoin_ticker.price}}")
     .row
       .col-md-12
         %h3
           24 Hour Range:
-          %price(current="{{bitcoin_ticker.low.value}}")
+          %price(current="{{bitcoin_ticker.low}}")
           -
-          %price(current="{{bitcoin_ticker.high.value}}")
+          %price(current="{{bitcoin_ticker.high}}")

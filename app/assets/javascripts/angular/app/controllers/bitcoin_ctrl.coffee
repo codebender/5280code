@@ -1,22 +1,18 @@
-angular.module('app.controllers.bitcoin', ['pubnub.angular.service'])
-  .controller 'bitcoinCtrl', ($rootScope, $scope, PubNub) ->
-    ticker_channel = 'd5f06780-30a8-4a48-a2f8-7ed181b4a13f'
-    $scope.bitcoin_ticker = null
+angular.module('app.controllers.bitcoin', ['resources.bitstamp','doowb.angular-pusher'])
+  .controller 'bitcoinCtrl', ($rootScope, $scope, Pusher, Bitstamp) ->
+    trade_channel = 'live_trades'
 
-    PubNub.init
-      subscribe_key : 'sub-c-50d56e1e-2fd9-11e3-a041-02ee2ddab7fe'
+    $scope.bitcoin_ticker = {}
 
-    PubNub.ngSubscribe
-      channel : ticker_channel
-
-    $rootScope.$on PubNub.ngMsgEv(ticker_channel), (ngEvent, payload) ->
-      $scope.$apply ->
-        $scope.bitcoin_ticker = payload.message.ticker
-
-    PubNub.ngHistory
-      channel : ticker_channel
-      count   : 1
+    Pusher.subscribe trade_channel, 'trade', (trade) ->
+      $scope.bitcoin_ticker.last_traded_at = new Date()
+      $scope.bitcoin_ticker.price = trade.price
 
     $scope.$on '$locationChangeStart', (event, next, current) ->
-      PubNub.ngUnsubscribe channel : ticker_channel
-      PubNub.destroy()
+      Pusher.unsubscribe trade_channel
+
+    Bitstamp.ticker().success (data) ->
+      $scope.bitcoin_ticker.last_traded_at = data.timestamp*1000
+      $scope.bitcoin_ticker.price = data.last
+      $scope.bitcoin_ticker.high = data.high
+      $scope.bitcoin_ticker.low = data.low
