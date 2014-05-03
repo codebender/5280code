@@ -14,8 +14,9 @@ angular.module('appFilters',
 ['app.filters.minutes_to_hours'
 ])
 
-angular.module('app', ['appControllers', 'appDirectives', 'appFilters', 'ngRoute', 'ui.bootstrap'])
-  .config ($routeProvider, $locationProvider) ->
+angular.module('app', ['appControllers', 'appDirectives', 'appFilters',
+'ngRoute', 'ui.bootstrap', 'doowb.angular-pusher'])
+  .config ($routeProvider, $locationProvider, PusherServiceProvider) ->
     $routeProvider
       .when '/',
         template: JST['angular/app/templates/home']
@@ -29,3 +30,7 @@ angular.module('app', ['appControllers', 'appDirectives', 'appFilters', 'ngRoute
         redirectTo: '/'
 
     $locationProvider.html5Mode(true)
+
+    PusherServiceProvider
+      .setToken('de504dc5763aeef9ff52')
+      .setOptions({})

@@ -1,12 +1,17 @@
 describe 'Bitcoin Controller', ->
   $scope = $location = rootScope = null
 
-  pubnubStub = jasmine.createSpyObj('PubNub', ['init',
-                                               'ngSubscribe',
-                                               'ngMsgEv',
-                                               'ngHistory',
-                                               'ngUnsubscribe',
-                                               'destroy'])
+  tickerResponse = {"high": "455.78", "last": "437.01",
+  "timestamp": "1399149858", "bid": "436.77", "vwap": "442.15",
+  "volume": "7667.02426861", "low": "431.00", "ask": "437.01"}
+
+  pusherStub = jasmine.createSpyObj('Pusher', ['subscribe',
+                                             'unsubscribe'])
+
+  bitstampStub = jasmine.createSpyObj('Bitstamp', ['ticker'])
+  bitstampStub.ticker.andCallFake -> success: (api_data) ->
+    api_data(tickerResponse)
+
   beforeEach module 'app.controllers.bitcoin'
 
   beforeEach inject ($rootScope, $controller, _$location_) ->
@@ -15,24 +20,20 @@ describe 'Bitcoin Controller', ->
     $location = _$location_
     $controller 'bitcoinCtrl',
       $scope: $scope
-      PubNub: pubnubStub
+      Pusher: pusherStub
+      Bitstamp: bitstampStub
 
-  it 'initializes PubNub with the subscribe_key', ->
-    expect(pubnubStub.init).toHaveBeenCalledWith(
-      subscribe_key : 'sub-c-50d56e1e-2fd9-11e3-a041-02ee2ddab7fe')
+  it 'subscribes to the Bitstamp channel', ->
+    expect(pusherStub.subscribe).toHaveBeenCalledWith(
+      'live_trades', 'trade', jasmine.any(Function))
 
-  it 'subscribes to the PubNub channel', ->
-    expect(pubnubStub.ngSubscribe).toHaveBeenCalledWith(
-      channel : 'd5f06780-30a8-4a48-a2f8-7ed181b4a13f')
-
-  it 'requests the PubNub channel history', ->
-    expect(pubnubStub.ngHistory).toHaveBeenCalledWith(
-      channel : 'd5f06780-30a8-4a48-a2f8-7ed181b4a13f',
-      count   : 1)
-
-  it 'unsubscribes the PubNub channel and destroys the instance', ->
+  it 'unsubscribes the Bitstamp channel and destroys the instance', ->
     $location.path('/')
     rootScope.$digest()
-    expect(pubnubStub.ngUnsubscribe).toHaveBeenCalledWith(
-      channel : 'd5f06780-30a8-4a48-a2f8-7ed181b4a13f')
-    expect(pubnubStub.destroy).toHaveBeenCalled()
+    expect(pusherStub.unsubscribe).toHaveBeenCalledWith('live_trades')
+
+  it 'gets the latest bitstamp trade info', ->
+    expect($scope.bitcoin_ticker.last_traded_at).toEqual(tickerResponse.timestamp*1000)
+    expect($scope.bitcoin_ticker.price).toEqual(tickerResponse.last)
+    expect($scope.bitcoin_ticker.high).toEqual(tickerResponse.high)
+    expect($scope.bitcoin_ticker.low).toEqual(tickerResponse.low)
