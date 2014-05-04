@@ -6,6 +6,10 @@ Code5280::Application.routes.draw do
       resource :activity, only: :show
       resource :sleep, only: :show
     end
+
+    namespace :bitcoin do
+      resource :ticker, only: :show
+    end
   end
   root to: 'home#index'
   get '*page' => "home#index"
