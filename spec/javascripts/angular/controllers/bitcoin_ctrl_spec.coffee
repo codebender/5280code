@@ -8,8 +8,8 @@ describe 'Bitcoin Controller', ->
   pusherStub = jasmine.createSpyObj('Pusher', ['subscribe',
                                              'unsubscribe'])
 
-  bitstampStub = jasmine.createSpyObj('Bitstamp', ['ticker'])
-  bitstampStub.ticker.andCallFake -> success: (api_data) ->
+  bitcoinStub = jasmine.createSpyObj('Bitcoin', ['ticker'])
+  bitcoinStub.ticker.andCallFake -> success: (api_data) ->
     api_data(tickerResponse)
 
   beforeEach module 'app.controllers.bitcoin'
@@ -21,7 +21,7 @@ describe 'Bitcoin Controller', ->
     $controller 'bitcoinCtrl',
       $scope: $scope
       Pusher: pusherStub
-      Bitstamp: bitstampStub
+      Bitcoin: bitcoinStub
 
   it 'subscribes to the Bitstamp channel', ->
     expect(pusherStub.subscribe).toHaveBeenCalledWith(
