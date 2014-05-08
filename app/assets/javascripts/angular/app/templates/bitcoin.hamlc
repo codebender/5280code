@@ -7,7 +7,7 @@
   %a(href="https://www.bitstamp.net")
     Bitstamp
 %div(ng-controller="bitcoinCtrl")
-  .well.col-md-6
+  .well.col-md-6{'ng-show': 'bitcoin_ticker.price'}
     .pull-right
       %small.text-muted
         Last Updated: {{bitcoin_ticker.last_traded_at | date:"medium"}}
