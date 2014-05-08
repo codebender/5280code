@@ -27,18 +27,18 @@
                 = link_to '/' do
                   %i.fa.fa-medium.fa-home
                   Home
-              %li{'ng-class' => "{active: is_active('/meetups')}" }
-                = link_to '/meetups' do
-                  %i.fa.fa-medium.fa-users
-                  Meet Ups
-              %li{'ng-class' => "{active: is_active('/bitcoin')}" }
-                = link_to '/bitcoin' do
-                  %i.fa.fa-medium.fa-bitcoin
-                  Bitcoin
               %li{'ng-class' => "{active: is_active('/fitness')}" }
                 = link_to '/fitness' do
                   %i.fa.fa-medium.fa-tachometer
                   Fitness
+              %li{'ng-class' => "{active: is_active('/bitcoin')}" }
+                = link_to '/bitcoin' do
+                  %i.fa.fa-medium.fa-bitcoin
+                  Bitcoin
+              %li{'ng-class' => "{active: is_active('/meetups')}" }
+                = link_to '/meetups' do
+                  %i.fa.fa-medium.fa-users
+                  Meet Ups
             %ul.nav.navbar-nav.navbar-right
               %li
                 = link_to 'https://github.com/codebender', target: '_blank' do
@@ -60,7 +60,11 @@
       = yield
     %footer.footer
       .container
-        %p 5280Code.com
+        %p
+          5280Code.com
+          &bull;
+          Bitcoin:
+          = link_to '1HPCA8pXvteXQifF4KXnN5y4ZVrdKNuWhX', 'bitcoin:1HPCA8pXvteXQifF4KXnN5y4ZVrdKNuWhX'
         %p
           © 2013-2014
           = link_to 'Bent Solutions, LLC', 'http://www.bentsolutions.com'
