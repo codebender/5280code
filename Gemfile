@@ -13,7 +13,7 @@ gem 'jquery-rails', '~> 2.0.1'
 
 gem 'angularjs-rails', '~> 1.2.16'
 gem 'anjlab-bootstrap-rails', '~> 3.0.3.0', require: 'bootstrap-rails'
-gem 'font-awesome-sass', '~> 4.0.3.1'
+gem 'font-awesome-sass', '~> 4.0.3.2'
 gem 'ngmin-rails', '~> 0.4.0'
 gem 'haml_coffee_assets', git: "https://github.com/netzpirat/haml_coffee_assets"
 gem 'execjs', '~> 2.0.2'
