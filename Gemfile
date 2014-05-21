@@ -21,7 +21,7 @@ gem 'execjs', '~> 2.0.2'
 gem 'fitgem', '~> 0.8.0'
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.0.0.beta2'
+  gem 'rspec-rails', '~> 3.0.0.rc1'
   gem 'dotenv-rails', '~> 0.10.0'
 end
 
