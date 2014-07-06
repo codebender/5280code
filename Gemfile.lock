@@ -36,7 +36,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
-    angularjs-rails (1.2.16)
+    angularjs-rails (1.2.19)
     anjlab-bootstrap-rails (3.0.3.0)
       railties (>= 3.0)
       sass (>= 3.2)
@@ -66,7 +66,7 @@ GEM
       tilt
     hike (1.2.3)
     i18n (0.6.9)
-    jbuilder (2.0.7)
+    jbuilder (2.0.8)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
     jquery-rails (2.0.3)
@@ -86,13 +86,13 @@ GEM
     oauth (0.4.7)
     pg (0.17.1)
     polyglot (0.3.5)
-    pry (0.9.12.6)
-      coderay (~> 1.0)
-      method_source (~> 0.8)
+    pry (0.10.0)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
       slop (~> 3.4)
     pry-rails (0.3.2)
       pry (>= 0.9.10)
-    quiet_assets (1.0.2)
+    quiet_assets (1.0.3)
       railties (>= 3.1, < 5.0)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -178,7 +178,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  angularjs-rails (~> 1.2.16)
+  angularjs-rails (~> 1.2.19)
   anjlab-bootstrap-rails (~> 3.0.3.0)
   coffee-rails (~> 4.0.1)
   dotenv-rails (~> 0.10.0)
@@ -187,12 +187,12 @@ DEPENDENCIES
   font-awesome-sass (~> 4.0.3.2)
   haml (~> 4.0.5)
   haml_coffee_assets!
-  jbuilder (~> 2.0.7)
+  jbuilder (~> 2.0.8)
   jquery-rails (~> 2.0.1)
   ngmin-rails (~> 0.4.0)
   pg (~> 0.17.1)
   pry-rails
-  quiet_assets
+  quiet_assets (~> 1.0.3)
   rails (= 4.1.4)
   rails_12factor
   rspec-rails (~> 3.0.1)
