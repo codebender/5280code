@@ -33,7 +33,8 @@ module Fitbit
                       consumer_key: ENV["FITBIT_CONSUMER_KEY"],
                       consumer_secret: ENV["FITBIT_CONSUMER_SECRET"],
                       token: ENV["FITBIT_TOKEN"],
-                      secret: ENV["FITBIT_SECRET"]
+                      secret: ENV["FITBIT_SECRET"],
+                      ssl: true
                   )
       end
     end
