@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.1.2'
+ruby '2.1.3'
 
 gem 'rails', '4.1.6'
 gem 'pg', '~> 0.17.1'
@@ -23,6 +23,7 @@ gem 'fitgem', '~> 0.10.0'
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.1'
   gem 'dotenv-rails', '~> 0.10.0'
+  gem 'codeclimate-test-reporter', require: false
 end
 
 group :development do

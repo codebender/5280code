@@ -5,5 +5,6 @@
 
 Code status
 ------------
-[![Build Status](https://api.travis-ci.org/codebender/5280code.png)](https://travis-ci.org/codebender/5280code)
-[![Code Climate](https://codeclimate.com/github/codebender/5280code.png)](https://codeclimate.com/github/codebender/5280code)
+[![Build Status](https://semaphoreapp.com/api/v1/projects/7c1ea3e4-1ef6-4e12-be39-3fb9b2716f55/268651/badge.png)](https://semaphoreapp.com/codebender/5280code)
+[![Code Climate](https://codeclimate.com/github/codebender/5280code/badges/gpa.svg)](https://codeclimate.com/github/codebender/5280code)
+[![Test Coverage](https://codeclimate.com/github/codebender/5280code/badges/coverage.svg)](https://codeclimate.com/github/codebender/5280code)
