@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.1.2'
 
-gem 'rails', '4.1.4'
+gem 'rails', '4.1.6'
 gem 'pg', '~> 0.17.1'
 
 gem 'sass-rails', '~> 4.0.1'
@@ -18,7 +18,7 @@ gem 'ngmin-rails', '~> 0.4.0'
 gem 'haml_coffee_assets', git: "https://github.com/netzpirat/haml_coffee_assets"
 gem 'execjs', '~> 2.0.2'
 
-gem 'fitgem', '~> 0.8.0'
+gem 'fitgem', '~> 0.10.0'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.1'
