@@ -25,7 +25,7 @@
                 %h4 BMI: {{user.bmi}}
       .col-md-6
         .row
-          .col-md-3
+          .col-md-3.col-sm-6
             .img-thumbnail
               %img.col-md-12(src="http://static4.fitbit.com/simple.b-dis-png.h4621896b75431a4c9499334fb64c3247.pack")
               %h4.text-center Fitbit {{device.device_type}}
