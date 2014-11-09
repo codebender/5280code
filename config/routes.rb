@@ -10,6 +10,8 @@ Code5280::Application.routes.draw do
     namespace :bitcoin do
       resource :ticker, only: :show
     end
+
+    resources :meetups, only: :index
   end
   root to: 'home#index'
   get '*page' => "home#index"
