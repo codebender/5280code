@@ -19,6 +19,7 @@ gem 'haml_coffee_assets', git: "https://github.com/netzpirat/haml_coffee_assets"
 gem 'execjs', '~> 2.0.2'
 
 gem 'fitgem', '~> 0.10.0'
+gem 'meetup_client', '~> 0.0.6'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.1.0'
