@@ -1,6 +1,5 @@
-class Api::Bitcoin::TickersController < ApplicationController
-  respond_to :json
-
+class Api::Bitcoin::TickersController< Api::BaseController
+  
   def show
     respond_with(::Bitstamp.ticker)
   end
