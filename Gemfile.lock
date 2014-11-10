@@ -79,6 +79,7 @@ GEM
     kgio (2.9.2)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    meetup_client (0.0.6)
     method_source (0.8.2)
     mime-types (2.4.3)
     minitest (5.4.2)
@@ -193,6 +194,7 @@ DEPENDENCIES
   haml_coffee_assets!
   jbuilder (~> 2.0.8)
   jquery-rails (~> 2.0.1)
+  meetup_client (~> 0.0.6)
   ngmin-rails (~> 0.4.0)
   pg (~> 0.17.1)
   pry-rails

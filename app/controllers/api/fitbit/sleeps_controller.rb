@@ -1,5 +1,4 @@
-class Api::Fitbit::SleepsController < ApplicationController
-  respond_to :json
+class Api::Fitbit::SleepsController < Api::BaseController
 
   def show
     @sleep_data = ::Fitbit::Service.get_sleep_data

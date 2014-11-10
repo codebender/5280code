@@ -1,5 +1,4 @@
-class Api::Fitbit::UsersController < ApplicationController
-  respond_to :json
+class Api::Fitbit::UsersController < Api::BaseController
 
   def show
     @user_info = ::Fitbit::Service.get_user_info
