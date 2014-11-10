@@ -1,5 +1,19 @@
-%b
-  Let's Meet up!
-%p
-  Going to integrate meetup.com meetups that I am attending here.
-  Maybe a fancy calendar view with fullcallendar.js?
+%h1 Let's Meet up!
+%p.lead
+  Integrated with
+  %a(href="http://www.meetup.com/meetup_api/")
+    Meetup.com API
+%div(ng-controller="meetupCtrl")
+  .well.col-md-6{'ng-show': 'events'}
+    .list-group
+      .list-group-item(ng-repeat="event in events")
+        .list-group-item-heading
+          %a(href="{{event.event_url}}")
+            %h4 {{ event.name }}
+        %p.list-group-item-text
+          {{ event.time | date: 'medium' }}
+          %h5 {{ event.group.name }}
+
+          %a(href="http://www.google.com/maps/place/{{ event.venue.lat }},{{ event.venue.lon }}")
+            {{ event.venue.name }}
+            %i.fa.fa-map-marker

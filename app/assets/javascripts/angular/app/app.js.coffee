@@ -3,7 +3,8 @@ angular.module('appControllers',
  'app.controllers.home'
  'app.controllers.bitcoin'
  'app.controllers.fitness'
- 'app.controllers.coderwall'
+ 'app.controllers.coderwall',
+ 'app.controllers.meetup'
 ])
 
 angular.module('appDirectives',
