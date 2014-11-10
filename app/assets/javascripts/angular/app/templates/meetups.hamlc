@@ -5,6 +5,7 @@
     Meetup.com API
 %div(ng-controller="meetupCtrl")
   .well.col-md-6{'ng-show': 'events'}
+    %h3 Upcoming Meet Ups
     .list-group
       .list-group-item(ng-repeat="event in events")
         .list-group-item-heading
