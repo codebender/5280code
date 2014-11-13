@@ -60,7 +60,7 @@
                     %td {{activity.calories_out}}
                     %td {{activity.active_calories}}
                     %td {{activity.active_minutes | minutesToHours}}
-      .col-md-6
+      .col-md-6{'ng-show': 'sleep.minutes_asleep'}
         .row
           .col-md-12
             %h3 Sleep
