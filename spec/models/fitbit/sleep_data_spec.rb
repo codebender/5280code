@@ -65,5 +65,13 @@ describe Fitbit::SleepData do
       expect(sleep.minutes_to_fall_asleep).to eql 10
       expect(sleep.efficiency).to eql 98
     end
+
+    it 'handles when no sleep data is returned' do
+      expect{ Fitbit::SleepData.new({"sleep"=>[],
+        "summary"=>{
+          "totalMinutesAsleep"=>0, "totalSleepRecords"=>0, "totalTimeInBed"=>0}}
+        )
+      }.not_to raise_error
+    end
   end
 end

@@ -6,6 +6,8 @@ module Fitbit
                 :efficiency
 
     def initialize(args)
+      return if args['sleep'].empty?
+
       main_sleep = args['sleep'].select{|s| s['isMainSleep'] }.first
       @minutes_asleep = main_sleep['minutesAsleep']
       @minutes_in_bed = main_sleep['timeInBed']

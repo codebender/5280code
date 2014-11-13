@@ -64,7 +64,9 @@
         .row
           .col-md-12
             %h3 Sleep
-        .row
+            .label.label-primary{'ng-hide': 'sleep.minutes_asleep'}
+              No data has been reported for today
+        .row{'ng-show': 'sleep.minutes_asleep'}
           .col-md-12
             .table-responsive
               %table.table
