@@ -8,7 +8,7 @@ gem 'sass-rails', '~> 4.0.5'
 gem 'uglifier', '~> 2.3.3'
 gem 'coffee-rails', '~> 4.0.1'
 gem 'jbuilder', '~> 2.0.8'
-gem 'haml', '~> 4.0.5'
+gem 'haml', '~> 4.0'
 gem 'jquery-rails', '~> 2.0.1'
 
 gem 'angularjs-rails', '~> 1.2.26'
