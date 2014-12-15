@@ -82,7 +82,7 @@ GEM
     meetup_client (0.0.6)
     method_source (0.8.2)
     mime-types (2.4.3)
-    minitest (5.4.3)
+    minitest (5.5.0)
     multi_json (1.10.1)
     ngmin-rails (0.4.0)
       rails (>= 3.1)
