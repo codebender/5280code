@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/codebender/meetup_client.git
+  revision: 15a3564d60bcd53f5ccec43bd94c066b8b6da310
+  branch: rails-4-2
+  specs:
+    meetup_client (0.0.6)
+
+GIT
   remote: https://github.com/netzpirat/haml_coffee_assets
   revision: a3c2951eca005d4fcce4837b9a97a139fc022c66
   specs:
@@ -94,7 +101,6 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
-    meetup_client (0.0.6)
     mime-types (2.4.3)
     mini_portile (0.6.1)
     minitest (5.5.0)
@@ -216,7 +222,7 @@ DEPENDENCIES
   haml_coffee_assets!
   jbuilder (~> 2.0.8)
   jquery-rails (~> 2.0)
-  meetup_client (~> 0.0.6)
+  meetup_client!
   ngmin-rails (~> 0.4.0)
   pg (~> 0.17)
   quiet_assets (~> 1.0.3)

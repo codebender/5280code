@@ -15,12 +15,12 @@ gem 'angularjs-rails', '~> 1.2.26'
 gem 'anjlab-bootstrap-rails', '~> 3.0.3', require: 'bootstrap-rails'
 gem 'font-awesome-sass', '~> 4.0.3'
 gem 'ngmin-rails', '~> 0.4.0'
-gem 'haml_coffee_assets', git: "https://github.com/netzpirat/haml_coffee_assets"
+gem 'haml_coffee_assets', git: 'https://github.com/netzpirat/haml_coffee_assets'
 gem 'execjs', '~> 2.0.2'
 
 # Third Party Integration Gems
 gem 'fitgem', '~> 0.10'
-gem 'meetup_client', '~> 0.0.6'
+gem 'meetup_client', github: 'codebender/meetup_client', branch: 'rails-4-2'
 
 # rails 4.2 gems
 gem 'responders', '~> 2.0'
