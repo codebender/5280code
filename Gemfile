@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.1.5'
 
-gem 'rails', '4.1.8'
+gem 'rails', '4.2.0'
 gem 'pg', '~> 0.17'
 
 gem 'sass-rails', '~> 4.0'
@@ -18,8 +18,12 @@ gem 'ngmin-rails', '~> 0.4.0'
 gem 'haml_coffee_assets', git: "https://github.com/netzpirat/haml_coffee_assets"
 gem 'execjs', '~> 2.0.2'
 
+# Third Party Integration Gems
 gem 'fitgem', '~> 0.10'
 gem 'meetup_client', '~> 0.0.6'
+
+# rails 4.2 gems
+gem 'responders', '~> 2.0'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.1'
