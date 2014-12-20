@@ -29,12 +29,12 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.1'
   gem 'dotenv-rails', '~> 0.11'
   gem 'codeclimate-test-reporter', require: false
+  gem 'awesome_print'
 end
 
 group :development do
   gem 'quiet_assets', '~> 1.0.3'
   gem 'thin-rails'
-  gem 'pry-rails'
 end
 
 group :production do

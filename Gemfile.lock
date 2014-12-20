@@ -50,10 +50,10 @@ GEM
       railties (>= 3.0)
       sass (>= 3.2)
     arel (6.0.0)
+    awesome_print (1.2.0)
     builder (3.2.2)
     codeclimate-test-reporter (0.4.3)
       simplecov (>= 0.7.1, < 1.0.0)
-    coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -95,7 +95,6 @@ GEM
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     meetup_client (0.0.6)
-    method_source (0.8.2)
     mime-types (2.4.3)
     mini_portile (0.6.1)
     minitest (5.5.0)
@@ -106,12 +105,6 @@ GEM
       mini_portile (~> 0.6.0)
     oauth (0.4.7)
     pg (0.17.1)
-    pry (0.10.1)
-      coderay (~> 1.1.0)
-      method_source (~> 0.8.1)
-      slop (~> 3.4)
-    pry-rails (0.3.2)
-      pry (>= 0.9.10)
     quiet_assets (1.0.3)
       railties (>= 3.1, < 5.0)
     rack (1.6.0)
@@ -177,7 +170,6 @@ GEM
       multi_json (~> 1.0)
       simplecov-html (~> 0.8.0)
     simplecov-html (0.8.0)
-    slop (3.6.0)
     sprockets (2.12.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -213,6 +205,7 @@ PLATFORMS
 DEPENDENCIES
   angularjs-rails (~> 1.2.26)
   anjlab-bootstrap-rails (~> 3.0.3)
+  awesome_print
   codeclimate-test-reporter
   coffee-rails (~> 4.1)
   dotenv-rails (~> 0.11)
@@ -226,7 +219,6 @@ DEPENDENCIES
   meetup_client (~> 0.0.6)
   ngmin-rails (~> 0.4.0)
   pg (~> 0.17)
-  pry-rails
   quiet_assets (~> 1.0.3)
   rails (= 4.2.0)
   rails_12factor
