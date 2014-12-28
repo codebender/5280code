@@ -1,5 +1,5 @@
 Code5280::Application.routes.draw do
-  namespace :api, defaults: {format: :json} do
+  namespace :api, defaults: { format: :json } do
     namespace :fitbit do
       resource :user, only: :show
       resource :device, only: :show
@@ -12,6 +12,8 @@ Code5280::Application.routes.draw do
     end
 
     resources :meetups, only: :index
+
+    resources :blog_posts, only: [ :index, :show ]
   end
   root to: 'home#index'
   get '*page' => "home#index"
