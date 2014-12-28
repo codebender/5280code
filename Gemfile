@@ -17,6 +17,7 @@ gem 'font-awesome-sass', '~> 4.0.3'
 gem 'ngmin-rails', '~> 0.4.0'
 gem 'haml_coffee_assets', git: 'https://github.com/netzpirat/haml_coffee_assets'
 gem 'execjs', '~> 2.0.2'
+gem 'redcarpet', '~> 3.2'
 
 # Third Party Integration Gems
 gem 'fitgem', '~> 0.10'
