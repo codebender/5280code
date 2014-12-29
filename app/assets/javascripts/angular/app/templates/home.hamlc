@@ -1,14 +1,22 @@
 .row
   .col-md-8.col-sm-6(ng-controller="homeCtrl")
-    Home Content Here!
+    %h2 Recent Blog Posts
+    .list-group
+      %div(ng-repeat="blog_post in blog_posts")
+        %h3
+          %a.list-group-item(ng-href="blog_posts/{{ blog_post.id }}")
+            {{ blog_post.title }}
+            .label.label-default
+              {{ blog_post.created_at }}
+
   .col-md-4.col-sm-6(ng-controller="coderwallCtrl")
     %h4 Coderwall Badges
     .row
       .col-md-4.col-sm-6(ng-repeat="badge in badges")
-        %a(href="https://coderwall.com/codebender" tooltip-html-unsafe="<b>{{badge.name}}</b><br/>{{badge.description}}")
-          %img.img-responsive(ng-src="{{badge.badge}}")
+        %a(href="https://coderwall.com/codebender" tooltip-html-unsafe="<b>{{ badge.name }}</b><br/>{{ badge.description }}")
+          %img.img-responsive(ng-src="{{ badge.badge }}")
         .label.label-info.center-block
-          {{badge.created | date: "MM/dd/yyyy" }}
+          {{ badge.created | date: "MM/dd/yyyy" }}
     %hr
 
 .row
