@@ -30,7 +30,10 @@ angular.module('app', ['appControllers', 'appDirectives', 'appFilters',
       .otherwise
         redirectTo: '/'
 
-    $locationProvider.html5Mode(true)
+    $locationProvider.html5Mode(
+      enabled: true,
+      requireBase: false
+    )
 
     PusherServiceProvider
       .setToken('de504dc5763aeef9ff52')
