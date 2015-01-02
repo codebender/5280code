@@ -27,9 +27,9 @@ EOF
       get "/api/blog_posts"
 
       expect(response).to be_success
-      expect(json['blog_posts'].count).to eql 2
-      expect(json['blog_posts'].first['id']).to eql fake_blog_post.id
-      expect(json['blog_posts'].last['id']).to eql fake_blog_post.id
+      expect(json.count).to eql 2
+      expect(json.first['id']).to eql fake_blog_post.id
+      expect(json.last['id']).to eql fake_blog_post.id
     end
   end
 
