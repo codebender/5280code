@@ -1,0 +1,10 @@
+.row
+  .col-md-8(ng-controller="blogPostCtrl")
+    %h1
+      {{ blog_post.title }}
+    %p
+      by {{ blog_post.author }}
+      %small
+        {{ blog_post.created_at | date }}
+    %hr
+    %div(ng-bind-html="blog_post.html | unsafeHtml")

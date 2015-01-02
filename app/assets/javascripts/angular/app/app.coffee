@@ -13,7 +13,8 @@ angular.module('appDirectives',
 ])
 
 angular.module('appFilters',
-['app.filters.minutes_to_hours'
+['app.filters.minutes_to_hours',
+ 'app.filters.unsafe_html'
 ])
 
 angular.module('app', ['appControllers', 'appDirectives', 'appFilters',

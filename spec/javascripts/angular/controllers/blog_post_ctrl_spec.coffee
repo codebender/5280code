@@ -30,4 +30,4 @@ describe 'Blog Post Controller', ->
         { id: '2014-12-27-yet-another-blog'} )
 
     it 'sets the blog_post scope variable', ->
-      expect($scope.blog_post.title).toEqual(blogPostResponse.title)
+      expect($scope.blog_post).toEqual(blogPostResponse)
