@@ -2,12 +2,11 @@
   .col-md-8.col-sm-6(ng-controller="homeCtrl")
     %h2 Recent Blog Posts
     .list-group
-      %div(ng-repeat="blog_post in blog_posts")
-        %h3
-          %a.list-group-item(ng-href="blog_posts/{{ blog_post.id }}")
-            {{ blog_post.title }}
-            .label.label-default
-              {{ blog_post.created_at }}
+      .col-md-10.col-sm-12(ng-repeat="blog_post in blog_posts")
+        %a.list-group-item(ng-href="blog_posts/{{ blog_post.id }}")
+          %strong {{ blog_post.title }} -
+          .label.label-default
+            {{ blog_post.created_at | date }}
 
   .col-md-4.col-sm-6(ng-controller="coderwallCtrl")
     %h4 Coderwall Badges
