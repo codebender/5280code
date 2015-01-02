@@ -1,8 +1,8 @@
 .row
-  .col-md-8(ng-controller="blogPostCtrl")
-    %h1
+  .col-md-offset-2.col-md-8(ng-controller="blogPostCtrl")
+    %h1.text-center
       {{ blog_post.title }}
-    %p
+    %p.text-center
       by {{ blog_post.author }}
       %small
         {{ blog_post.created_at | date }}
