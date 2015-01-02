@@ -4,7 +4,8 @@ angular.module('appControllers',
  'app.controllers.bitcoin'
  'app.controllers.fitness'
  'app.controllers.coderwall',
- 'app.controllers.meetup'
+ 'app.controllers.meetup',
+ 'app.controllers.blog_post'
 ])
 
 angular.module('appDirectives',
@@ -27,6 +28,8 @@ angular.module('app', ['appControllers', 'appDirectives', 'appFilters',
         template: JST['angular/app/templates/meetups']
       .when '/bitcoin',
         template: JST['angular/app/templates/bitcoin']
+      .when '/blog_posts/:id',
+        template: JST['angular/app/templates/blog_post']
       .otherwise
         redirectTo: '/'
 
