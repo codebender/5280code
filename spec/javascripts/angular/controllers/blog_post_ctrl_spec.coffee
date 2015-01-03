@@ -14,6 +14,10 @@ describe 'Blog Post Controller', ->
 
     inject ($rootScope, $controller) ->
       $scope = $rootScope.$new()
+      mockLocation = jasmine.createSpyObj('$location', ['absUrl'])
+      mockLocation.absUrl.andCallFake ->
+        "http://localhost/blogs/2014-12-27-yet-another-blog"
+
       mockBlogPost = jasmine.createSpyObj('BlogPost', ['get'])
       mockBlogPost.get.andCallFake -> $promise:
         then: (callback) ->
@@ -23,11 +27,15 @@ describe 'Blog Post Controller', ->
         $scope: $scope
         $routeParams: { id: '2014-12-27-yet-another-blog' }
         BlogPost: mockBlogPost
+        $location: mockLocation
 
   describe 'initialization', ->
     it 'calls the api with the id from route param', ->
       expect(mockBlogPost.get).toHaveBeenCalledWith(
-        { id: '2014-12-27-yet-another-blog'} )
+        { id: '2014-12-27-yet-another-blog' } )
 
     it 'sets the blog_post scope variable', ->
       expect($scope.blog_post).toEqual(blogPostResponse)
+
+    it 'sets the current url for tweet sharing', ->
+      expect($scope.tweetUrl).toEqual('http://localhost/blogs/2014-12-27-yet-another-blog')

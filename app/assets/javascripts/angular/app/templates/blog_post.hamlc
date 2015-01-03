@@ -9,7 +9,8 @@
     %p
       %a.twitter-share-button(href='https://twitter.com/share'
         data-via='5280code' data-dnt='true'
-        data-text='{{ blog_post.title }} :: {{ blog_post.author }}')
+        data-text='{{ blog_post.title }} :: {{ blog_post.author }}'
+        data-url='{{ tweetUrl }}')
         Tweet
       :javascript
         window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
