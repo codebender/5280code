@@ -9,7 +9,8 @@ angular.module('appControllers',
 ])
 
 angular.module('appDirectives',
-['app.directives.price'
+['app.directives.price',
+ 'app.directives.twitter.share'
 ])
 
 angular.module('appFilters',
