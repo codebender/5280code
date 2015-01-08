@@ -59,7 +59,7 @@ GEM
     arel (6.0.0)
     awesome_print (1.6.1)
     builder (3.2.2)
-    codeclimate-test-reporter (0.4.4)
+    codeclimate-test-reporter (0.4.5)
       simplecov (>= 0.7.1, < 1.0.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -110,7 +110,7 @@ GEM
     nokogiri (1.6.5)
       mini_portile (~> 0.6.0)
     oauth (0.4.7)
-    pg (0.17.1)
+    pg (0.18.1)
     quiet_assets (1.0.3)
       railties (>= 3.1, < 5.0)
     rack (1.6.0)
@@ -225,7 +225,7 @@ DEPENDENCIES
   jquery-rails (~> 2.0)
   meetup_client!
   ngmin-rails (~> 0.4.0)
-  pg (~> 0.17)
+  pg (~> 0.18)
   quiet_assets (~> 1.0.3)
   rails (= 4.2.0)
   rails_12factor
