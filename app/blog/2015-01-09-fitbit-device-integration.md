@@ -9,8 +9,8 @@ I currently work as a Lead Software Engineer at
 company that specializes in health device data for its users.  I have been a
 major part of the company's device integrations from the start.  So I have an
 innate passion for health devices and data.  This is what drove me to integrate
-my personal [Fitbit](http://fitbit.com) into my personal sandbox website
-http://5280code.com - http://www.5280code.com/fitness.
+my personal [Fitbit](http://fitbit.com) Flex into my personal sandbox website
+http://5280code.com - http://www.5280code.com/fitness
 
 ### Fitgem!
 Thankfully the majority of the
