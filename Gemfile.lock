@@ -89,7 +89,7 @@ GEM
       tilt
     hike (1.2.3)
     i18n (0.7.0)
-    jbuilder (2.0.8)
+    jbuilder (2.2.6)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
     jquery-rails (2.3.0)
@@ -221,7 +221,7 @@ DEPENDENCIES
   font-awesome-sass (~> 4.0.3)
   haml (~> 4.0)
   haml_coffee_assets!
-  jbuilder (~> 2.0.8)
+  jbuilder (~> 2.2)
   jquery-rails (~> 2.0)
   meetup_client!
   ngmin-rails (~> 0.4.0)
