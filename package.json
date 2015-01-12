@@ -11,5 +11,8 @@
     "karma-jasmine": "0.3.4",
     "karma-phantomjs-launcher": "^0.1.4",
     "phantomjs": "1.9.13"
+  },
+  "scripts": {
+    "test": "./node_modules/karma/bin/karma start spec/karma/config/karma.conf.js --single-run"
   }
 }
