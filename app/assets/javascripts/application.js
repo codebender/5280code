@@ -11,13 +11,10 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
 //= require angular
 //= require angular-route
-//= require angular-animate
 //= require angular-resource
 //= require pusher/angular-pusher.min
 //= require twitter/bootstrap
-//= require ui-bootstrap/ui-bootstrap-tpls-0.9.0.min
 //= require hamlcoffee
 //= require_tree ./angular
