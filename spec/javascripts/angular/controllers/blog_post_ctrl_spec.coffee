@@ -19,9 +19,8 @@ describe 'Blog Post Controller', ->
         "http://localhost/blogs/2014-12-27-yet-another-blog"
 
       mockBlogPost = jasmine.createSpyObj('BlogPost', ['get'])
-      mockBlogPost.get.and.callFake -> $promise:
-        then: (callback) ->
-          callback(blogPostResponse)
+      mockBlogPost.get.and.callFake -> success: (api_data) ->
+        api_data(blogPostResponse)
 
       $controller 'blogPostCtrl',
         $scope: $scope
@@ -32,7 +31,7 @@ describe 'Blog Post Controller', ->
   describe 'initialization', ->
     it 'calls the api with the id from route param', ->
       expect(mockBlogPost.get).toHaveBeenCalledWith(
-        { id: '2014-12-27-yet-another-blog' } )
+        '2014-12-27-yet-another-blog' )
 
     it 'sets the blog_post scope variable', ->
       expect($scope.blog_post).toEqual(blogPostResponse)

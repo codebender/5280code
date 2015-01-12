@@ -13,7 +13,6 @@
 //= require jquery
 //= require angular
 //= require angular-route
-//= require angular-resource
 //= require pusher/angular-pusher.min
 //= require twitter/bootstrap
 //= require hamlcoffee
