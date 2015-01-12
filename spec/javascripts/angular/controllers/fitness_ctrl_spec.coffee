@@ -13,13 +13,13 @@ describe 'Fitness Contrller', ->
 
   fitbitStub = jasmine.createSpyObj('Fitbit', ['user_info',
     'device_info', 'sleep_data', 'activity_data'])
-  fitbitStub.user_info.andCallFake -> then: (api_data) ->
+  fitbitStub.user_info.and.callFake -> then: (api_data) ->
     api_data(userResponse)
-  fitbitStub.device_info.andCallFake -> then: (api_data) ->
+  fitbitStub.device_info.and.callFake -> then: (api_data) ->
     api_data(deviceResponse)
-  fitbitStub.sleep_data.andCallFake -> then: (api_data) ->
+  fitbitStub.sleep_data.and.callFake -> then: (api_data) ->
     api_data(sleepResponse)
-  fitbitStub.activity_data.andCallFake -> then: (api_data) ->
+  fitbitStub.activity_data.and.callFake -> then: (api_data) ->
     api_data(activityResponse)
 
   beforeEach module 'app.controllers.fitness'

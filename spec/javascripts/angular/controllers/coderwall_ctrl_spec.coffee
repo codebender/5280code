@@ -8,7 +8,7 @@ describe 'Coderwall Controller', ->
   beforeEach inject ($rootScope, $controller) ->
     $scope = $rootScope.$new()
     coderwallStub = jasmine.createSpyObj('Coderwall', ['get_badges'])
-    coderwallStub.get_badges.andCallFake -> then: (data) ->
+    coderwallStub.get_badges.and.callFake -> then: (data) ->
       data(coderwall_response)
 
     $controller 'coderwallCtrl',

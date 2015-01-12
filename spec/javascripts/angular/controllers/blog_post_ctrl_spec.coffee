@@ -15,11 +15,11 @@ describe 'Blog Post Controller', ->
     inject ($rootScope, $controller) ->
       $scope = $rootScope.$new()
       mockLocation = jasmine.createSpyObj('$location', ['absUrl'])
-      mockLocation.absUrl.andCallFake ->
+      mockLocation.absUrl.and.callFake ->
         "http://localhost/blogs/2014-12-27-yet-another-blog"
 
       mockBlogPost = jasmine.createSpyObj('BlogPost', ['get'])
-      mockBlogPost.get.andCallFake -> $promise:
+      mockBlogPost.get.and.callFake -> $promise:
         then: (callback) ->
           callback(blogPostResponse)
 

@@ -21,7 +21,7 @@ describe 'Home Contrller', ->
 
     inject ($rootScope, $controller) ->
       mockBlogPost = jasmine.createSpyObj('BlogPost', ['query'])
-      mockBlogPost.query.andCallFake -> $promise:
+      mockBlogPost.query.and.callFake -> $promise:
         then: (callback) ->
           callback(blogPostsResponse)
 
