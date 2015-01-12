@@ -1,14 +1,16 @@
 angular.module('app.directives.price', [])
-  .directive 'price', ->
+  .directive 'price', ($timeout) ->
     linker = (scope, element, attrs) ->
       scope.$watch 'current', (newPrice, oldPrice) ->
         return if oldPrice == newPrice || !oldPrice
-        element.removeClass('increase').width()
-        element.removeClass('decrease').width()
-        if parseFloat(oldPrice) < parseFloat(newPrice)
-          element.addClass('increase')
-        else
-          element.addClass('decrease')
+        element.removeClass('increase').val()
+        element.removeClass('decrease').val()
+        $timeout ->
+          if parseFloat(oldPrice) < parseFloat(newPrice)
+            element.addClass('increase')
+          else
+            element.addClass('decrease')
+        , 1
     scope:
       current: '@'
     restrict: 'E',
