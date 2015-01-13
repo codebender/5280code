@@ -20,3 +20,9 @@ bundle install
 npm install
 ```
 
+
+### Run Test Suites
+```bash
+rspec spec
+npm test
+```
