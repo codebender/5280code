@@ -3,7 +3,7 @@ describe 'Meetup Contrller', ->
   eventsResponse = { results: [ {name: 'event1' }, {name: 'event2'} ] }
 
   meetupStub = jasmine.createSpyObj('Meetup', ['events'])
-  meetupStub.events.andCallFake -> then: (api_data) ->
+  meetupStub.events.and.callFake -> then: (api_data) ->
     api_data(eventsResponse)
 
   beforeEach module 'app.controllers.meetup'

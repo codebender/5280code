@@ -9,7 +9,7 @@ describe 'Bitcoin Controller', ->
                                              'unsubscribe'])
 
   bitcoinStub = jasmine.createSpyObj('Bitcoin', ['ticker'])
-  bitcoinStub.ticker.andCallFake -> success: (api_data) ->
+  bitcoinStub.ticker.and.callFake -> success: (api_data) ->
     api_data(tickerResponse)
 
   beforeEach module 'app.controllers.bitcoin'

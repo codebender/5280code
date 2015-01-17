@@ -18,3 +18,4 @@ pickle-email-*.html
 .project
 # Ignore Environment Variables
 .env
+node_modules

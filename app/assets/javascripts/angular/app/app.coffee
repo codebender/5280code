@@ -19,7 +19,7 @@ angular.module('appFilters',
 ])
 
 angular.module('app', ['appControllers', 'appDirectives', 'appFilters',
-'ngRoute', 'ui.bootstrap', 'doowb.angular-pusher'])
+'ngRoute', 'doowb.angular-pusher'])
   .config ($routeProvider, $locationProvider, PusherServiceProvider) ->
     $routeProvider
       .when '/',
