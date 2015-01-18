@@ -81,7 +81,7 @@ GEM
     execjs (2.0.2)
     fitgem (0.10.0)
       oauth
-    font-awesome-sass (4.0.3.2)
+    font-awesome-sass (4.2.2)
       sass (~> 3.2)
     globalid (0.3.0)
       activesupport (>= 4.1.0)
@@ -218,7 +218,7 @@ DEPENDENCIES
   dotenv-rails (~> 0.11)
   execjs (~> 2.0.2)
   fitgem (~> 0.10)
-  font-awesome-sass (~> 4.0.3)
+  font-awesome-sass (~> 4.2)
   haml (~> 4.0)
   haml_coffee_assets!
   jbuilder (~> 2.2)
