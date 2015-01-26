@@ -11,7 +11,7 @@
   .col-md-4.col-sm-6(ng-controller="coderwallCtrl")
     %h4 Coderwall Badges
     .row
-      .col-md-4.col-sm-6(ng-repeat="badge in badges")
+      .col-md-3.col-sm-4(ng-repeat="badge in badges")
         %a(href="https://coderwall.com/codebender" tooltip-html-unsafe="<b>{{ badge.name }}</b><br/>{{ badge.description }}")
           %img.img-responsive(ng-src="{{ badge.badge }}")
         .label.label-info.center-block
