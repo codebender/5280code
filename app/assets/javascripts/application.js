@@ -14,6 +14,7 @@
 //= require angular
 //= require angular-route
 //= require pusher/angular-pusher.min
-//= require twitter/bootstrap
+//= require bootstrap-sprockets
+//= require ui-bootstrap/ui-bootstrap-tpls-0.12.0.min
 //= require hamlcoffee
 //= require_tree ./angular
