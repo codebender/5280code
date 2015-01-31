@@ -18,13 +18,11 @@ gem 'ngmin-rails', '~> 0.4.0'
 gem 'haml_coffee_assets', git: 'https://github.com/netzpirat/haml_coffee_assets'
 gem 'execjs', '~> 2.0.2'
 gem 'redcarpet', '~> 3.2'
+gem 'responders', '~> 2.1'
 
 # Third Party Integration Gems
 gem 'fitgem', '~> 0.10'
 gem 'meetup_client', github: 'codebender/meetup_client', branch: 'rails-4-2'
-
-# rails 4.2 gems
-gem 'responders', '~> 2.0'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.1'
