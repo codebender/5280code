@@ -25,7 +25,7 @@ gem 'fitgem', '~> 0.10'
 gem 'meetup_client', github: 'codebender/meetup_client', branch: 'rails-4-2'
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.1'
+  gem 'rspec-rails', '~> 3.2'
   gem 'dotenv-rails', '~> 0.11'
   gem 'codeclimate-test-reporter', require: false
   gem 'awesome_print'
