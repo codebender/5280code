@@ -13,6 +13,7 @@ class BlogPost
     def all
       BLOG_ROOT.entries.
         reject(&:directory?).
+        sort.
         reverse.
         map { |file| BlogPost.new(file) }
     end
