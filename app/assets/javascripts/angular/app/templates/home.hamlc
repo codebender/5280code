@@ -4,6 +4,7 @@
     .list-group
       .col-md-10.col-sm-12(ng-repeat="blog_post in blog_posts")
         %a.list-group-item(ng-href="blog_posts/{{ blog_post.id }}")
+          %i.fa.fa-medium-size.fa-file-text-o
           %strong {{ blog_post.title }} -
           .label.label-default
             {{ blog_post.created_at | date }}

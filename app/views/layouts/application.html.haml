@@ -24,33 +24,33 @@
             %ul.nav.navbar-nav
               %li{'ng-class' => "{active: is_active('/')}" }
                 = link_to '/' do
-                  %i.fa.fa-medium.fa-home
+                  %i.fa.fa-medium-size.fa-home
                   Home
               %li{'ng-class' => "{active: is_active('/fitness')}" }
                 = link_to '/fitness' do
-                  %i.fa.fa-medium.fa-tachometer
+                  %i.fa.fa-medium-size.fa-heartbeat
                   Fitness
               %li{'ng-class' => "{active: is_active('/bitcoin')}" }
                 = link_to '/bitcoin' do
-                  %i.fa.fa-medium.fa-bitcoin
+                  %i.fa.fa-medium-size.fa-bitcoin
                   Bitcoin
               %li{'ng-class' => "{active: is_active('/meetups')}" }
                 = link_to '/meetups' do
-                  %i.fa.fa-medium.fa-users
+                  %i.fa.fa-medium-size.fa-users
                   Meet Ups
             %ul.nav.navbar-nav.navbar-right
               %li
                 = link_to 'https://github.com/codebender', target: '_blank' do
-                  %i.fa.fa-medium.fa-github-square
+                  %i.fa.fa-medium-size.fa-github-square
               %li
                 = link_to 'https://twitter.com/5280code', target: '_blank' do
-                  %i.fa.fa-medium.fa-twitter-square
+                  %i.fa.fa-medium-size.fa-twitter-square
               %li
                 = link_to 'http://www.linkedin.com/in/matthewkbender', target: '_blank' do
-                  %i.fa.fa-medium.fa-linkedin-square
+                  %i.fa.fa-medium-size.fa-linkedin-square
               %li
                 = link_to 'http://instagram.com/bendo', target: '_blank' do
-                  %i.fa.fa-medium.fa-instagram
+                  %i.fa.fa-medium-size.fa-instagram
     .container
       = yield
     %footer.footer
