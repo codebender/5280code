@@ -45,6 +45,24 @@ http://www.raspberrypi.org/help/)
 1. [Set Raspberry Pi's IP to be static](
 http://elinux.org/RPi_Setting_up_a_static_IP_in_Debian)
 1. Enable SSH-ing - ```sudo raspi-config``` -> Advanced Options -> SSH
+1. [Allow passwordless SSH into Raspberry pi](
+http://www.raspberrypi.org/documentation/remote-access/ssh/passwordless.md)
+
+### A few more things...
+1. Install Ruby with rbenv
+  * [Install rbenv](https://github.com/sstephenson/rbenv#installation)
+  * [Add ruby-build plugin](https://github.com/sstephenson/ruby-build#installing-as-an-rbenv-plugin-recommended)
+  * Install a ruby version, for example ```rbenv install 2.2.1```
+  * rehash rbenv ```rbenv rehash```
+1. Install Node
+  * sudo apt-get nodejs
+
+### Do something AWESOME!
+1. Install a camera
+1. Connect Speakers
+1. Play Games
+1. Connect more components
+1. All the things!
 
 ### Questions or Comments?
 Hit me up on twitter [@5280code](https://twitter.com/5280code)!
