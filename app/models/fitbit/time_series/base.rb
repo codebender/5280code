@@ -8,7 +8,6 @@ module Fitbit::TimeSeries
       @base_date = base_date
     end
 
-
     def get_data
       raw_data = client.data_by_time_range(resource_path, period: period,
         base_date: base_date)

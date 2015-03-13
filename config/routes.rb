@@ -3,8 +3,8 @@ Code5280::Application.routes.draw do
     namespace :fitbit do
       resource :user, only: :show
       resource :device, only: :show
-      resource :activity, only: :show
-      resource :sleep, only: :show
+      get 'activity(/:time_frame)' => 'activities#show'
+      get 'sleep(/:time_frame)' => 'sleeps#show'
     end
 
     namespace :bitcoin do
