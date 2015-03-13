@@ -21,9 +21,23 @@ angular.module('resources.fitbit', [])
           deferred.resolve(response)
       deferred.promise
 
+    sleep_time_series_data: (time_frame) ->
+      deferred = $q.defer()
+      $http.get('/api/fitbit/sleep/' + time_frame)
+        .success (response) =>
+          deferred.resolve(response)
+      deferred.promise
+
     activity_data: ->
       deferred = $q.defer()
       $http.get('/api/fitbit/activity')
+        .success (response) =>
+          deferred.resolve(response)
+      deferred.promise
+
+    activity_time_series_data: (time_frame)->
+      deferred = $q.defer()
+      $http.get('/api/fitbit/activity/' + time_frame)
         .success (response) =>
           deferred.resolve(response)
       deferred.promise
