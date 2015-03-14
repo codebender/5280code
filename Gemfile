@@ -11,7 +11,7 @@ gem 'jbuilder', '~> 2.2'
 gem 'haml', '~> 4.0'
 gem 'jquery-rails', '~> 2.0'
 
-gem 'angularjs-rails', '1.3.10'
+gem 'angularjs-rails', '1.3.14'
 gem 'bootstrap-sass', '~> 3.3'
 gem 'font-awesome-sass', '~> 4.3.1'
 gem 'ngmin-rails', '~> 0.4.0'
