@@ -22,10 +22,7 @@ module Fitbit::TimeSeries
     def parse_api_data(raw_data)
       return {} if raw_data[requested_resource].nil?
 
-      raw_data[requested_resource].inject({}) do |newhash, hash|
-        newhash[hash['dateTime']]=hash['value']
-        newhash
-      end
+      raw_data
     end
 
     def requested_resource

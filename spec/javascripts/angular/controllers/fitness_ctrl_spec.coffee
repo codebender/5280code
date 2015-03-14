@@ -11,21 +11,68 @@ describe 'Fitness Controller', ->
   activityResponse = {"steps":1715,"distance":0.8,
   "calories_out":1351,"active_calories":317,"active_minutes":89}
   tsActivityResponse = {
-    "2015-03-07": "10418",
-    "2015-03-08": "19844",
-    "2015-03-09": "15061",
-    "2015-03-10": "10289",
-    "2015-03-11": "13754",
-    "2015-03-12": "11606",
-    "2015-03-13": "9134" }
+    "activities-tracker-steps": [
+      {
+        "dateTime": "2015-03-08",
+        "value": "19844"
+      },
+      {
+        "dateTime": "2015-03-09",
+        "value": "15061"
+      },
+      {
+        "dateTime": "2015-03-10",
+        "value": "10289"
+      },
+      {
+        "dateTime": "2015-03-11",
+        "value": "13754"
+      },
+      {
+        "dateTime": "2015-03-12",
+        "value": "11606"
+      },
+      {
+        "dateTime": "2015-03-13",
+        "value": "10064"
+      },
+      {
+        "dateTime": "2015-03-14",
+        "value": "3714"
+      }
+    ]
+  }
   tsSleepResponse = {
-    "2015-03-07": "0",
-    "2015-03-08": "414",
-    "2015-03-09": "462",
-    "2015-03-10": "378",
-    "2015-03-11": "501",
-    "2015-03-12": "358",
-    "2015-03-13": "380"
+    "sleep-minutesAsleep": [
+      {
+        "dateTime": "2015-03-08",
+        "value": "414"
+      },
+      {
+        "dateTime": "2015-03-09",
+        "value": "462"
+      },
+      {
+        "dateTime": "2015-03-10",
+        "value": "378"
+      },
+      {
+        "dateTime": "2015-03-11",
+        "value": "501"
+      },
+      {
+        "dateTime": "2015-03-12",
+        "value": "358"
+      },
+      {
+        "dateTime": "2015-03-13",
+        "value": "380"
+      },
+      {
+        "dateTime": "2015-03-14",
+        "value": "426"
+      }
+    ]
   }
 
   fitbitStub = jasmine.createSpyObj('Fitbit', ['user_info',

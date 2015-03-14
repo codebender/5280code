@@ -49,15 +49,14 @@ describe Fitbit::TimeSeries::Base do
       expect(instance.parse_api_data({test: 123})).to eql({})
     end
 
-    it 'converts api data from an array of hashes to a hash' do
+    it 'returns that raw api data' do
       raw_data = { 'fake-my-test' => [
         {"dateTime"=>"2015-02-09", "value"=>"37"},
         {"dateTime"=>"2015-02-10", "value"=>"44"},
         {"dateTime"=>"2015-02-11", "value"=>"66"}
       ]}
 
-      expect(instance.parse_api_data(raw_data)).to eql({ "2015-02-09" => "37",
-        "2015-02-10" => "44", "2015-02-11" => "66" })
+      expect(instance.parse_api_data(raw_data)).to eql(raw_data)
     end
   end
 
