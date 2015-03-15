@@ -19,6 +19,8 @@ module.exports = function(config) {
     'node_modules/angular-mocks/angular-mocks.js',
     'node_modules/angular-pusher/angular-pusher.js',
     'node_modules/angular-route/angular-route.js',
+    'node_moduels/c3/node_moduels/d3/d3.js',
+    'node_moduels/c3/c3.js',
     'app/assets/javascripts/**/*.coffee',
     'spec/javascripts/**/*_spec.coffee'
     ],

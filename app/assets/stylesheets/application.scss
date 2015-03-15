@@ -4,6 +4,8 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+@import "c3";
+
 body {
   padding-top: 180px;
   background-color: #E9E9E9;
@@ -132,4 +134,8 @@ nav.container {
 
 .no-top-margin {
   margin-top: 0px
+}
+
+.chart {
+  height: 300px;
 }

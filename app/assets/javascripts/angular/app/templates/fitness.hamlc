@@ -82,3 +82,24 @@
                     %td {{sleep.minutes_in_bed | minutesToHours}}
                     %td {{sleep.minutes_to_fall_asleep | minutesToHours}}
                     %td {{sleep.efficiency}}%
+    %hr
+    .row
+      .col-md-12
+        .btn-group
+          .btn.btn-primary(ng-class="{active: '1w' == time_frame}", ng-click="setTimeFrame('1w')")
+            1 Week
+          .btn.btn-primary(ng-class="{active: '1m' == time_frame}", ng-click="setTimeFrame('1m')")
+            1 Month
+    .row
+      .col-md-6.thin-right-border
+        .row
+          .col-md-12
+            %h3 Steps
+        .row
+          #steps_chart.col-md-11.chart(c3-simple=true, config='stepChartConfig')
+      .col-md-6
+        .row
+          .col-md-12
+            %h3 Minutes Asleep
+        .row
+          #sleep_chart.col-md-11.chart(c3-simple=true, config='sleepChartConfig')

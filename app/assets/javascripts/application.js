@@ -17,4 +17,6 @@
 //= require bootstrap-sprockets
 //= require ui-bootstrap/ui-bootstrap-tpls-0.12.0.min
 //= require hamlcoffee
+//= require d3
+//= require c3
 //= require_tree ./angular

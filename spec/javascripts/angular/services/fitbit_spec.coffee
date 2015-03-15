@@ -24,8 +24,20 @@ describe 'Fitbit', ->
       expect(typeof fitbit.sleep_data().then).toBe('function')
       http.flush()
 
+  describe '#sleep_time_series_data', ->
+    it 'should GET the local fitbit api and return a promise', ->
+      http.expectGET('/api/fitbit/sleep/1w').respond({})
+      expect(typeof fitbit.sleep_time_series_data('1w').then).toBe('function')
+      http.flush()
+
   describe '#activity_data', ->
     it 'should GET the local fitbit api and return a promise', ->
       http.expectGET('/api/fitbit/activity').respond({})
       expect(typeof fitbit.activity_data().then).toBe('function')
+      http.flush()
+
+  describe '#activity_time_series_data', ->
+    it 'should GET the local fitbit api and return a promise', ->
+      http.expectGET('/api/fitbit/activity/1w').respond({})
+      expect(typeof fitbit.activity_time_series_data('1w').then).toBe('function')
       http.flush()
