@@ -96,34 +96,10 @@
           .col-md-12
             %h3 Steps
         .row
-          .col-md-12
-            .table-responsive
-              %table.table
-                %thead
-                  %tr
-                    %th.text-center Date
-                    %th.text-center Step Total
-                %tbody
-                  %tr.text-center(ng-repeat="(date, step_total) in activity_time_series")
-                    %td
-                      {{date | date: 'shortDate'}}
-                    %td
-                      {{step_total}}
+          #steps_chart.col-md-11.chart(c3-simple=true, config='stepChartConfig')
       .col-md-6
         .row
           .col-md-12
             %h3 Minutes Asleep
         .row
-          .col-md-12
-            .table-responsive
-              %table.table
-                %thead
-                  %tr
-                    %th.text-center Date
-                    %th.text-center Step Total
-                %tbody
-                  %tr.text-center(ng-repeat="(date, minutes_asleep) in sleep_time_series")
-                    %td
-                      {{date | date: 'shortDate'}}
-                    %td
-                      {{minutes_asleep | minutesToHours}}
+          #sleep_chart.col-md-11.chart(c3-simple=true, config='sleepChartConfig')

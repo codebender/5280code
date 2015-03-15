@@ -17,13 +17,47 @@ angular.module('app.controllers.fitness', ['resources.fitbit'])
       $scope.time_frame = time_frame
       $scope.getTimeSeriesData()
 
+    $scope.stepChartConfig =
+      data:
+        x: 'dateTime'
+        json: []
+        keys:
+          x: 'dateTime'
+          value: ['value']
+        type: 'spline'
+      axis:
+        x:
+          type: 'timeseries'
+          tick:
+            format: '%Y-%m-%d'
+      grid:
+        y:
+          lines: [{value: 10000, text: 'Daily Goal'}]
+
+    $scope.sleepChartConfig =
+      data:
+        x: 'dateTime'
+        json: []
+        keys:
+          x: 'dateTime'
+          value: ['value']
+        type: 'spline'
+      axis:
+        x:
+          type: 'timeseries'
+          tick:
+            format: '%Y-%m-%d'
+      grid:
+        y:
+          lines: [{value: 420, text: 'Daily Goal'}]
+
     $scope.getTimeSeriesData = ->
-      Fitbit.sleep_time_series_data($scope.time_frame).then (fitbit_data) ->
-        $scope.sleep_time_series = fitbit_data
-
       Fitbit.activity_time_series_data($scope.time_frame).then (fitbit_data) ->
-        $scope.activity_time_series = fitbit_data
+        $scope.stepChartConfig.data.json = fitbit_data['activities-tracker-steps']
 
-    $scope.time_frame = '1w'
+      Fitbit.sleep_time_series_data($scope.time_frame).then (fitbit_data) ->
+        $scope.sleepChartConfig.data.json = fitbit_data['sleep-minutesAsleep']
 
-    $scope.getTimeSeriesData()
+
+
+    $scope.setTimeFrame('1w')

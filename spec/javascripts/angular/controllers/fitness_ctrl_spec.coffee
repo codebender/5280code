@@ -112,11 +112,11 @@ describe 'Fitness Controller', ->
     it 'loads latest fitbit api activity data into scope', ->
       expect($scope.activity).toEqual activityResponse
 
-    it 'loads latest fitbit api activity time series data into scope', ->
-      expect($scope.activity_time_series).toEqual tsActivityResponse
+    it 'loads latest fitbit api activity time series data into the chart', ->
+      expect($scope.stepChartConfig.data.json).toEqual tsActivityResponse['activities-tracker-steps']
 
-    it 'loads latest fitbit api sleep time series data into scope', ->
-      expect($scope.sleep_time_series).toEqual tsSleepResponse
+    it 'loads latest fitbit api sleep time series data into the chart', ->
+      expect($scope.sleepChartConfig.data.json).toEqual tsSleepResponse['sleep-minutesAsleep']
 
     it 'defaults the time series data to 1 week', ->
       expect(fitbitStub.activity_time_series_data).toHaveBeenCalledWith('1w')
