@@ -92,14 +92,8 @@
             1 Month
     .row
       .col-md-6.thin-right-border
-        .row
-          .col-md-12
-            %h3 Steps
-        .row
-          #steps_chart.col-md-11.chart(c3-simple=true, config='stepChartConfig')
+        %h3 Steps
+        #steps_chart.chart(c3-simple=true, config='stepChartConfig')
       .col-md-6
-        .row
-          .col-md-12
-            %h3 Minutes Asleep
-        .row
-          #sleep_chart.col-md-11.chart(c3-simple=true, config='sleepChartConfig')
+        %h3 Minutes Asleep
+        #sleep_chart.chart(c3-simple=true, config='sleepChartConfig')
