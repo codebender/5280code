@@ -33,6 +33,9 @@ angular.module('app.controllers.fitness', ['resources.fitbit'])
           type: 'timeseries'
           tick:
             format: '%m/%d'
+        y:
+          min: 0
+          padding: {bottom:0}
       grid:
         y:
           lines: [{value: 10000, text: 'Daily Goal'}]
@@ -53,6 +56,9 @@ angular.module('app.controllers.fitness', ['resources.fitbit'])
           type: 'timeseries'
           tick:
             format: '%m/%d'
+        y:
+          min: 0
+          padding: {bottom:0}
       grid:
         y:
           lines: [{value: 420, text: 'Daily Goal'}]
