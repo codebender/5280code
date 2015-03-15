@@ -26,8 +26,8 @@ angular.module('app.controllers.fitness', ['resources.fitbit'])
           x: 'dateTime'
           value: ['value']
         type: 'spline'
-      legend:
-        show: false
+        names:
+          value: 'Steps'
       axis:
         x:
           type: 'timeseries'
@@ -46,8 +46,8 @@ angular.module('app.controllers.fitness', ['resources.fitbit'])
           x: 'dateTime'
           value: ['value']
         type: 'spline'
-      legend:
-        show: false
+        names:
+          value: 'Minutes Asleep'
       axis:
         x:
           type: 'timeseries'
