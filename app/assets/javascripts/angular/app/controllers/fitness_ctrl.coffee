@@ -20,6 +20,7 @@ angular.module('app.controllers.fitness', ['resources.fitbit'])
     $scope.stepChartConfig =
       data:
         x: 'dateTime'
+        xFormat: '%Y-%m-%d',
         json: []
         keys:
           x: 'dateTime'
@@ -29,7 +30,7 @@ angular.module('app.controllers.fitness', ['resources.fitbit'])
         x:
           type: 'timeseries'
           tick:
-            format: '%Y-%m-%d'
+            format: '%m/%d'
       grid:
         y:
           lines: [{value: 10000, text: 'Daily Goal'}]
@@ -37,6 +38,7 @@ angular.module('app.controllers.fitness', ['resources.fitbit'])
     $scope.sleepChartConfig =
       data:
         x: 'dateTime'
+        xFormat: '%Y-%m-%d',
         json: []
         keys:
           x: 'dateTime'
@@ -46,7 +48,7 @@ angular.module('app.controllers.fitness', ['resources.fitbit'])
         x:
           type: 'timeseries'
           tick:
-            format: '%Y-%m-%d'
+            format: '%m/%d'
       grid:
         y:
           lines: [{value: 420, text: 'Daily Goal'}]
