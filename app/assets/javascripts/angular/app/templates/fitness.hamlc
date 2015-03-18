@@ -3,6 +3,12 @@
   Integrated with
   %a(href="http://dev.fitbit.com")
     Fitbit API
+  & Charts using
+  %a(href="http://c3js.org")
+    C3.js
+  \/
+  %a(href="http://d3js.org")
+    D3
 %div(ng-controller="fitnessCtrl")
   .well.col-md-12{'ng-show': 'user'}
     .row
