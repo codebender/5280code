@@ -31,63 +31,55 @@
                 %h4 BMI: {{user.bmi}}
       .col-md-6
         .row
-          .col-md-3.col-sm-6
+          .col-md-3.col-sm-6.col-xs-6
             .img-thumbnail
-              %img.col-md-12(src="http://static4.fitbit.com/simple.b-dis-png.h4621896b75431a4c9499334fb64c3247.pack")
+              %img.col-md-12.col-sm-12.col-xs-12(src="http://static4.fitbit.com/simple.b-dis-png.h4621896b75431a4c9499334fb64c3247.pack")
               %h4.text-center Fitbit {{device.device_type}}
-          .col-md-9
+          .col-md-9.col-sm-6.col-xs-6
             .img-thumbnail
               #battery(class="{{device.battery_level | lowercase}}-battery")
               %h4.text-center Battery Level
             .row
-              .col-md-12
+              .col-md-12.col-sm-12.col-xs-12
                 %h4 Last Sync: {{device.last_sync_time | date:"medium"}}
     %hr
     .row
-      .col-md-6.thin-right-border
-        .row
-          .col-md-12
-            %h3 Today's Activity
-        .row
-          .col-md-12
-            .table-responsive
-              %table.table
-                %thead
-                  %tr
-                    %th.text-center Steps
-                    %th.text-center Distance
-                    %th.text-center Calories Out
-                    %th.text-center Active Calories
-                    %th.text-center Active Minutes
-                %tbody
-                  %tr.text-center
-                    %td {{activity.steps}}
-                    %td {{activity.distance}} miles
-                    %td {{activity.calories_out}}
-                    %td {{activity.active_calories}}
-                    %td {{activity.active_minutes | minutesToHours}}
-      .col-md-6
-        .row
-          .col-md-12
-            %h3 Sleep
-            .label.label-primary{'ng-hide': 'sleep.minutes_asleep'}
-              No data has been reported for today
-        .row{'ng-show': 'sleep.minutes_asleep'}
-          .col-md-12
-            .table-responsive
-              %table.table
-                %thead
-                  %tr
-                    %th.text-center Asleep
-                    %th.text-center In Bed
-                    %th.text-center Fell Asleep In
-                    %th.text-center Sleep Efficiency
-                %tbody
-                  %tr.text-center
-                    %td {{sleep.minutes_asleep | minutesToHours}}
-                    %td {{sleep.minutes_in_bed | minutesToHours}}
-                    %td {{sleep.minutes_to_fall_asleep | minutesToHours}}
-                    %td {{sleep.efficiency}}%
+      .col-md-6.col-sm-12.col-xs-12.thin-right-border
+        %h3 Today's Activity
+        .table-responsive
+          %table.table
+            %thead
+              %tr
+                %th.text-center Steps
+                %th.text-center Distance
+                %th.text-center Calories Out
+                %th.text-center Active Calories
+                %th.text-center Active Minutes
+            %tbody
+              %tr.text-center
+                %td {{activity.steps}}
+                %td {{activity.distance}} miles
+                %td {{activity.calories_out}}
+                %td {{activity.active_calories}}
+                %td {{activity.active_minutes | minutesToHours}}
+      .col-md-6.col-sm-12.col-xs-12
+        %h3 Sleep
+        .label.label-primary{'ng-hide': 'sleep.minutes_asleep'}
+          No data has been reported for today
+        .table-responsive{'ng-show': 'sleep.minutes_asleep'}
+          %table.table
+            %thead
+              %tr
+                %th.text-center Asleep
+                %th.text-center In Bed
+                %th.text-center Fell Asleep In
+                %th.text-center Sleep Efficiency
+            %tbody
+              %tr.text-center
+                %td {{sleep.minutes_asleep | minutesToHours}}
+                %td {{sleep.minutes_in_bed | minutesToHours}}
+                %td {{sleep.minutes_to_fall_asleep | minutesToHours}}
+                %td {{sleep.efficiency}}%
     %hr
     .row
       .col-md-12
