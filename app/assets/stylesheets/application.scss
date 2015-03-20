@@ -87,20 +87,24 @@ nav.container {
   height:40px;
   border-radius:2px;
 
-  &.low-battery {
-    width: 10px;
-    background: red;
-  }
-  &.medium-battery {
-    width: 45px;
-    background: yellow;
-  }
-  &.high-battery {
-    width: 85px;
-    background: lime;
-  }
-  &.full-battery {
-    background: lime;
+  .battery-level {
+    height: inherit;
+
+    &.low-battery {
+      width: 10px;
+      background: red;
+    }
+    &.medium-battery {
+      width: 45px;
+      background: yellow;
+    }
+    &.high-battery {
+      width: 85px;
+      background: lime;
+    }
+    &.full-battery {
+      background: lime;
+    }
   }
 }
 
@@ -121,7 +125,7 @@ nav.container {
   display:block;
   background:transparent;
   border:2px solid #999;
-  margin:10px 93px;
+  margin:-30px 93px;
   width:10px;
   height:20px;
   position:absolute;
