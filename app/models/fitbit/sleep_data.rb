@@ -1,18 +1,20 @@
 module Fitbit
   class SleepData
-    attr_reader :minutes_asleep,
-                :minutes_in_bed,
-                :minutes_to_fall_asleep,
-                :efficiency
+    include Fitbit::Client
 
-    def initialize(args)
-      return if args['sleep'].empty?
+    # https://wiki.fitbit.com/display/API/API-Get-Sleep
+    def get_data
+      raw_data = client.sleep_on_date(today)
+      parse_api_data(raw_data)
+    end
 
-      main_sleep = args['sleep'].select{|s| s['isMainSleep'] }.first
-      @minutes_asleep = main_sleep['minutesAsleep']
-      @minutes_in_bed = main_sleep['timeInBed']
-      @minutes_to_fall_asleep = main_sleep['minutesToFallAsleep']
-      @efficiency = main_sleep['efficiency']
+    def parse_api_data(raw_data)
+      return if raw_data['sleep'].empty?
+
+      main_sleep = raw_data['sleep'].select{|s| s['isMainSleep'] }.first
+
+      main_sleep.slice('minutesAsleep', 'timeInBed','minutesToFallAsleep',
+        'efficiency')
     end
   end
 end

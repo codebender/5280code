@@ -33,22 +33,30 @@ describe Fitbit::UserInfo do
       }
   end
 
-  describe 'initialize' do
-    it 'parses the returns api hash args' do
-      user_info = Fitbit::UserInfo.new(user_hash)
-      expect(user_info.member_since).to eql Date.parse('2010-02-07')
-      expect(user_info.avatar_url).to eql 'http://www.fitbit.com/defaultProfile_150_male.gif'
-      expect(user_info.city).to eql 'San Francisco'
-      expect(user_info.state).to eql 'CA'
-      expect(user_info.height).to eql 76.75
-      expect(user_info.weight).to eql 160.55
+  describe 'get_data' do
+    it 'calls the client to get the sleep data' do
+      expect_any_instance_of(Fitgem::Client).to receive(:user_info).
+        and_return(user_hash)
+
+      Fitbit::UserInfo.new.get_data
     end
   end
 
-  describe 'bmi' do
+  describe 'parse_api_data' do
+    it 'parses the returns api hash args' do
+      user_info = Fitbit::UserInfo.new.parse_api_data(user_hash)
+      expect(user_info['memberSince']).to eql '2010-02-07'
+      expect(user_info['avatar150']).
+        to eql 'http://www.fitbit.com/defaultProfile_150_male.gif'
+      expect(user_info['city']).to eql 'San Francisco'
+      expect(user_info['state']).to eql 'CA'
+      expect(user_info['height']).to eql 76.75
+      expect(user_info['weight']).to eql 160.55
+    end
+
     it 'calculates the users BMI from the height and weight' do
-      user_info = Fitbit::UserInfo.new(user_hash)
-      expect(user_info.bmi).to eql ((160.55/(76.75*76.75))*703).round(2)
+      user_info = Fitbit::UserInfo.new.parse_api_data(user_hash)
+      expect(user_info['bmi']).to eql ((160.55/(76.75*76.75))*703).round(2)
     end
   end
 end
