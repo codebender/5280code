@@ -2,6 +2,7 @@ module Fitbit
   class DeviceInfo
     include Fitbit::Client
 
+    # https://wiki.fitbit.com/display/API/API-Get-Devices
     def get_data
       raw_data = client.devices
       parse_api_data(raw_data)

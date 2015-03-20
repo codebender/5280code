@@ -11,11 +11,6 @@ module Fitbit
         Fitbit::SleepData.new(client.sleep_on_date(today))
       end
 
-      # https://wiki.fitbit.com/display/API/API-Get-Devices
-      def get_device_info
-        Fitbit::DeviceInfo.new(client.devices)
-      end
-
       # https://wiki.fitbit.com/display/API/API-Get-Activities
       def get_activity_data
         Fitbit::ActivityData.new(client.activities_on_date(today))

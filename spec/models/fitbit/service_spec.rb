@@ -55,26 +55,6 @@ describe Fitbit::Service do
       end
     end
 
-    describe 'get_device_info' do
-      it 'calls the fitbit api endpoint devices with the client' do
-        allow(Fitbit::DeviceInfo).to receive(:new)
-
-        expect(client).to receive(:devices)
-
-        Fitbit::Service.get_device_info
-      end
-
-      it 'returns a DeviceInfo object that parses the returned api data' do
-        allow(client).to receive(:devices)
-        device_info_mock = double(Fitbit::DeviceInfo)
-
-        expect(Fitbit::DeviceInfo).to receive(:new).and_return(device_info_mock)
-
-        device_info = Fitbit::Service.get_device_info
-        expect(device_info).to eql device_info_mock
-      end
-    end
-
     describe 'get_activity_data' do
       it 'calls the fitbit api endpoint activities with the client' do
         allow(Fitbit::ActivityData).to receive(:new)
