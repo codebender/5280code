@@ -9,9 +9,9 @@ module Fitbit
     end
 
     def parse_api_data(raw_data)
-      parsed = raw_data.first.slice("battery", "deviceVersion", "lastSyncTime")
+      parsed = raw_data.first.slice('battery', 'deviceVersion', 'lastSyncTime')
       Time.use_zone('Mountain Time (US & Canada)') do
-        parsed["lastSyncTime"] = Time.zone.parse(parsed["lastSyncTime"]).utc
+        parsed['lastSyncTime'] = Time.zone.parse(parsed['lastSyncTime']).utc
       end
       parsed
     end
