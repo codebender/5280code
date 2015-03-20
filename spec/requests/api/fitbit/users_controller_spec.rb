@@ -3,16 +3,16 @@ require 'spec_helper'
 describe 'Fitbit::UsersController API' do
   describe 'GET /api/fitbit/user' do
     it 'returns the fitbit user info' do
-      user_info = double(Fitbit::UserInfo)
-      allow(user_info).to receive(:member_since).and_return(Date.today)
-      allow(user_info).to receive(:avatar_url).
-        and_return('http://www.fitbit.com/default_male.gif')
-      allow(user_info).to receive(:city).and_return('San Francisco')
-      allow(user_info).to receive(:state).and_return('CA')
-      allow(user_info).to receive(:height).and_return(76.75)
-      allow(user_info).to receive(:weight).and_return(176.75)
-      allow(user_info).to receive(:bmi).and_return(21.09)
-      allow(Fitbit::Service).to receive(:get_user_info).and_return(user_info)
+      allow_any_instance_of(Fitbit::UserInfo).to receive(:get_data).
+        and_return({
+          'memberSince' => Date.today,
+          'avatar150' => 'http://www.fitbit.com/default_male.gif',
+          'city' => 'San Francisco',
+          'state' => 'CA',
+          'height' => 76.75,
+          'weight' => 176.75,
+          'bmi' => 21.09
+        })
 
       get '/api/fitbit/user'
 
