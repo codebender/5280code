@@ -5,7 +5,7 @@ class Api::Fitbit::SleepsController < Api::BaseController
       render json:
         ::Fitbit::TimeSeries::MinutesAsleep.new(params[:time_frame]).get_data
     else
-      @sleep_data = ::Fitbit::Service.get_sleep_data
+      @sleep_data = ::Fitbit::SleepData.new.get_data
     end
   end
 end

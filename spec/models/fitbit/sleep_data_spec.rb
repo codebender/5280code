@@ -57,17 +57,26 @@ describe Fitbit::SleepData do
     }
   end
 
-  describe 'initialize' do
+  describe 'get_data' do
+    it 'calls the client to get the sleep data' do
+      expect_any_instance_of(Fitgem::Client).to receive(:sleep_on_date).
+        and_return(sleep_data)
+
+      Fitbit::SleepData.new.get_data
+    end
+  end
+
+  describe 'parse_api_data' do
     it 'parses the returns api hash args' do
-      sleep = Fitbit::SleepData.new(sleep_data)
-      expect(sleep.minutes_asleep).to eql 480
-      expect(sleep.minutes_in_bed).to eql 490
-      expect(sleep.minutes_to_fall_asleep).to eql 10
-      expect(sleep.efficiency).to eql 98
+      parsed_data = Fitbit::SleepData.new.parse_api_data(sleep_data)
+      expect(parsed_data['minutesAsleep']).to eql 480
+      expect(parsed_data['timeInBed']).to eql 490
+      expect(parsed_data['minutesToFallAsleep']).to eql 10
+      expect(parsed_data['efficiency']).to eql 98
     end
 
     it 'handles when no sleep data is returned' do
-      expect{ Fitbit::SleepData.new({"sleep"=>[],
+      expect{ Fitbit::SleepData.new.parse_api_data({"sleep"=>[],
         "summary"=>{
           "totalMinutesAsleep"=>0, "totalSleepRecords"=>0, "totalTimeInBed"=>0}}
         )
