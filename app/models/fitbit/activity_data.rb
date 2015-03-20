@@ -1,21 +1,19 @@
 module Fitbit
   class ActivityData
-    attr_reader :steps,
-                :distance,
-                :calories_out,
-                :active_calories,
-                :active_minutes
+    include Fitbit::Client
 
-    def initialize(args)
-      @steps = args['summary']['steps']
-      @distance = args['summary']['distances'].
+    # https://wiki.fitbit.com/display/API/API-Get-Activities
+    def get_data
+      raw_data = client.activities_on_date(today)
+      parse_api_data(raw_data)
+    end
+
+    def parse_api_data(raw_data)
+      parsed_data = raw_data['summary'].slice('steps', 'caloriesOut',
+        'activityCalories', 'veryActiveMinutes')
+      parsed_data['distance'] = raw_data['summary']['distances'].
         select{|d| d['activity'] == 'tracker'}.first['distance']
-      @calories_out = args['summary']['caloriesOut']
-      @active_calories = args['summary']['activityCalories']
-      @active_minutes = args['summary']['fairlyActiveMinutes'] +
-                        args['summary']['lightlyActiveMinutes'] +
-                        args['summary']['veryActiveMinutes']
-
+      parsed_data
     end
   end
 end

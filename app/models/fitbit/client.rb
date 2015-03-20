@@ -10,4 +10,8 @@ module Fitbit::Client
                   secret: ENV["FITBIT_SECRET"]
               )
   end
+
+  def today
+    Time.now.in_time_zone('Mountain Time (US & Canada)').to_date
+  end
 end

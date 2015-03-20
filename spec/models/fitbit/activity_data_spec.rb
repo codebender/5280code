@@ -51,14 +51,23 @@ describe Fitbit::ActivityData do
     }
   end
 
-  describe 'initialize' do
+  describe 'get_data' do
+    it 'calls the client to get the activity data' do
+      expect_any_instance_of(Fitgem::Client).to receive(:activities_on_date).
+        and_return(activity)
+
+      Fitbit::ActivityData.new.get_data
+    end
+  end
+
+  describe 'parse_api_data' do
     it 'parses the returns api hash args' do
-      activity_data = Fitbit::ActivityData.new(activity)
-      expect(activity_data.steps).to eql 1234
-      expect(activity_data.distance).to eql 1.32
-      expect(activity_data.calories_out).to eql 2143
-      expect(activity_data.active_calories).to eql 230
-      expect(activity_data.active_minutes).to eql 60
+      parsed_data = Fitbit::ActivityData.new.parse_api_data(activity)
+      expect(parsed_data['steps']).to eql 1234
+      expect(parsed_data['distance']).to eql 1.32
+      expect(parsed_data['caloriesOut']).to eql 2143
+      expect(parsed_data['activityCalories']).to eql 230
+      expect(parsed_data['veryActiveMinutes']).to eql 30
     end
   end
 end
