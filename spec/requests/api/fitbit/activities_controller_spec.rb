@@ -7,7 +7,7 @@ describe 'Fitbit::ActivitiesController API' do
         and_return({
           "steps" => 12345,
           "caloriesOut" => 2944,
-          "activeCalories" => 748,
+          "activityCalories" => 748,
           "distance" => 5.34,
           "veryActiveMinutes" => 68
         })
