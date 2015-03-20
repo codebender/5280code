@@ -13,14 +13,31 @@ describe Fitbit::DeviceInfo do
     ]
   end
 
-  describe 'initialize' do
+  describe 'get_data' do
+    it 'calls the client to get the device data' do
+      expect_any_instance_of(Fitgem::Client).to receive(:devices).and_return(
+        device_data)
+
+      Fitbit::DeviceInfo.new.get_data
+    end
+
+  end
+
+  describe 'parse_api_data' do
     it 'parses the returns api hash args' do
-      device_info = Fitbit::DeviceInfo.new(device_data)
+      parsed_data = Fitbit::DeviceInfo.new.parse_api_data(device_data)
       Time.use_zone('Mountain Time (US & Canada)') do
-        expect(device_info.last_sync_time).to eql Time.zone.parse('2011-08-26T11:19:03.000')
+        expect(parsed_data['lastSyncTime']).to eql Time.zone.
+          parse('2011-08-26T11:19:03.000').utc
       end
-      expect(device_info.battery_level).to eql 'High'
-      expect(device_info.device_type).to eql 'Ultra'
+      expect(parsed_data['battery']).to eql 'High'
+      expect(parsed_data['deviceVersion']).to eql 'Ultra'
+    end
+
+    it 'only returns certain keys of the raw data' do
+      parsed_data = Fitbit::DeviceInfo.new.parse_api_data(device_data)
+      expect(parsed_data['id']).to be_nil
+      expect(parsed_data['type']).to be_nil
     end
   end
 end

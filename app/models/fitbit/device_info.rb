@@ -1,15 +1,18 @@
 module Fitbit
   class DeviceInfo
-    attr_reader :last_sync_time,
-                :battery_level,
-                :device_type
+    include Fitbit::Client
 
-    def initialize(args)
+    def get_data
+      raw_data = client.devices
+      parse_api_data(raw_data)
+    end
+
+    def parse_api_data(raw_data)
+      parsed = raw_data.first.slice("battery", "deviceVersion", "lastSyncTime")
       Time.use_zone('Mountain Time (US & Canada)') do
-        @last_sync_time = Time.zone.parse(args[0]['lastSyncTime']).utc
+        parsed["lastSyncTime"] = Time.zone.parse(parsed["lastSyncTime"]).utc
       end
-      @battery_level = args[0]['battery']
-      @device_type = args[0]['deviceVersion']
+      parsed
     end
   end
 end
