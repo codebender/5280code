@@ -5,7 +5,7 @@ module Fitbit::TimeSeries
 
     attr_reader :base_date, :period
 
-    def initialize(period, base_date='today')
+    def initialize(period, base_date=today)
       @period = period
       @base_date = base_date
     end
