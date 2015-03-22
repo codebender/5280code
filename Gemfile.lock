@@ -75,6 +75,7 @@ GEM
     d3-rails (3.4.11)
       railties (>= 3.1)
     daemons (1.2.2)
+    dalli (2.7.4)
     diff-lcs (1.2.5)
     docile (1.1.5)
     dotenv (0.11.1)
@@ -225,6 +226,7 @@ DEPENDENCIES
   codeclimate-test-reporter
   coffee-rails (~> 4.1)
   d3-rails (= 3.4.11)
+  dalli (~> 2.7.4)
   dotenv-rails (~> 0.11)
   execjs (~> 2.0.2)
   fitgem (~> 0.10)

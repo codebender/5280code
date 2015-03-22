@@ -3,6 +3,7 @@ ruby '2.2.1'
 
 gem 'rails', '4.2.1'
 gem 'pg', '~> 0.18'
+gem 'dalli', '~> 2.7.4'
 
 gem 'sass-rails', '~> 4.0'
 gem 'uglifier', '~> 2.3.3'
