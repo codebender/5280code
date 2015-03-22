@@ -1,15 +1,16 @@
 require 'spec_helper'
 
 describe Fitbit::TimeSeries::Base do
+  let(:today) { Time.now.in_time_zone('Mountain Time (US & Canada)').to_date }
   describe 'initialization' do
     it 'sets the period from the passed parameter' do
       instance = Fitbit::TimeSeries::Base.new('1w')
       expect(instance.period).to eql '1w'
     end
 
-    it 'defaults base_date for time series data to today if it is no passed' do
+    it 'defaults base_date for time series data to current date' do
       instance = Fitbit::TimeSeries::Base.new('1w')
-      expect(instance.base_date).to eql 'today'
+      expect(instance.base_date).to eql today
     end
   end
 
@@ -21,7 +22,7 @@ describe Fitbit::TimeSeries::Base do
       allow(instance).to receive(:requested_resource).and_return('test-path')
 
       expect_any_instance_of(Fitgem::Client).to receive(:data_by_time_range).
-        with('test/path', period: '1w', base_date: 'today').
+        with('test/path', period: '1w', base_date: today).
         and_return({'test-path' => []})
 
       instance.get_data
