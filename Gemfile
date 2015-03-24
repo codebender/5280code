@@ -4,6 +4,7 @@ ruby '2.2.1'
 gem 'rails', '4.2.1'
 gem 'pg', '~> 0.18'
 gem 'dalli', '~> 2.7.4'
+gem 'puma', '~> 2.11'
 
 gem 'sass-rails', '~> 4.0'
 gem 'uglifier', '~> 2.3.3'
@@ -36,11 +37,9 @@ end
 
 group :development do
   gem 'quiet_assets', '~> 1.0.3'
-  gem 'thin-rails'
 end
 
 group :production do
-  gem 'unicorn', '~> 4.8'
   gem 'rails_12factor'
   gem 'newrelic_rpm'
 end
