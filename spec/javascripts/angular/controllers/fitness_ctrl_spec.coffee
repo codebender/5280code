@@ -1,5 +1,5 @@
 describe 'Fitness Controller', ->
-  $scope = null
+  $scope = $timeout = null
   userResponse = {"member_since":"2012-12-13",
   "avatar_url":"https://cloudfront.net/50_square.jpg",
   "city":"Denver","state":"CO","height":80,
@@ -93,8 +93,9 @@ describe 'Fitness Controller', ->
 
   beforeEach module 'app.controllers.fitness'
 
-  beforeEach inject ($rootScope, $controller) ->
+  beforeEach inject ($rootScope, $controller, _$timeout_) ->
     $scope = $rootScope.$new()
+    $timeout = _$timeout_
     $controller 'fitnessCtrl',
       $scope: $scope
       Fitbit: fitbitStub
@@ -113,12 +114,15 @@ describe 'Fitness Controller', ->
       expect($scope.activity).toEqual activityResponse
 
     it 'loads latest fitbit api activity time series data into the chart', ->
+      $timeout.flush()
       expect($scope.stepChartConfig.data.json).toEqual tsActivityResponse['activities-tracker-steps']
 
     it 'loads latest fitbit api sleep time series data into the chart', ->
+      $timeout.flush()
       expect($scope.sleepChartConfig.data.json).toEqual tsSleepResponse['sleep-minutesAsleep']
 
     it 'defaults the time series data to 1 week', ->
+      $timeout.flush()
       expect(fitbitStub.activity_time_series_data).toHaveBeenCalledWith('1w')
       expect(fitbitStub.sleep_time_series_data).toHaveBeenCalledWith('1w')
 
@@ -129,6 +133,7 @@ describe 'Fitness Controller', ->
 
     it 'get the data for the new time frame', ->
       $scope.setTimeFrame('1m')
+      $timeout.flush()
       expect(fitbitStub.activity_time_series_data).toHaveBeenCalledWith('1m')
       expect(fitbitStub.sleep_time_series_data).toHaveBeenCalledWith('1m')
 
