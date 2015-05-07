@@ -23,7 +23,7 @@ gem 'execjs', '~> 2.0.2'
 gem 'redcarpet', '~> 3.2'
 gem 'responders', '~> 2.1'
 gem 'd3-rails', '3.4.11'
-gem 'c3-rails', '~> 0.4.8'
+gem 'c3-rails', '~> 0.4.10'
 
 # Third Party Integration Gems
 gem 'fitgem', '~> 0.10'

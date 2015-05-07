@@ -1,5 +1,5 @@
 angular.module('app.controllers.fitness', ['resources.fitbit'])
-  .controller 'fitnessCtrl', ($scope, Fitbit) ->
+  .controller 'fitnessCtrl', ($scope, $timeout, Fitbit) ->
     Fitbit.user_info().then (fitbit_data) ->
       $scope.user = fitbit_data
 
@@ -15,7 +15,7 @@ angular.module('app.controllers.fitness', ['resources.fitbit'])
 
     $scope.setTimeFrame = (time_frame) ->
       $scope.time_frame = time_frame
-      $scope.getTimeSeriesData()
+      $timeout($scope.getTimeSeriesData)
 
     $scope.stepChartConfig =
       data:
@@ -69,7 +69,5 @@ angular.module('app.controllers.fitness', ['resources.fitbit'])
 
       Fitbit.sleep_time_series_data($scope.time_frame).then (fitbit_data) ->
         $scope.sleepChartConfig.data.json = fitbit_data['sleep-minutesAsleep']
-
-
 
     $scope.setTimeFrame('1w')
