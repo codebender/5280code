@@ -15,7 +15,7 @@ angular.module('app.controllers.fitness', ['resources.fitbit'])
 
     $scope.setTimeFrame = (time_frame) ->
       $scope.time_frame = time_frame
-      $timeout($scope.getTimeSeriesData)
+      $timeout($scope.getTimeSeriesData, 250)
 
     $scope.stepChartConfig =
       data:
