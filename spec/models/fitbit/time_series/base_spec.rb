@@ -63,14 +63,15 @@ describe Fitbit::TimeSeries::Base do
 
   describe "#resource_path" do
     it 'raises an error indicating that this method must be implmented' do
-      expect { Fitbit::TimeSeries::Base.new('1w').resource_path }.to raise_error
+      expect { Fitbit::TimeSeries::Base.new('1w').resource_path }.
+        to raise_error NotImplementedError
     end
   end
 
   describe "#requested_resource" do
     it 'raises an error indicating that this method must be implmented' do
       expect { Fitbit::TimeSeries::Base.new('1w').requested_resource }.
-        to raise_error
+        to raise_error NotImplementedError
     end
   end
 end
