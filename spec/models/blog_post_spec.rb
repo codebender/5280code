@@ -41,7 +41,8 @@ RSpec.describe BlogPost, type: :model do
       end
 
       it 'raises an exception if the blog post is not found' do
-        expect { BlogPost.find('fake-unfound-blog-post') }.to raise_error
+        expect { BlogPost.find('fake-unfound-blog-post') }.
+          to raise_error BlogPost::BlogPostNotFound
       end
     end
   end
