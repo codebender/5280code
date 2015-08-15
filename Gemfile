@@ -4,7 +4,7 @@ ruby '2.2.2'
 gem 'rails', '4.2.3'
 gem 'pg', '~> 0.18'
 gem 'dalli', '~> 2.7.4'
-gem 'puma', '~> 2.12'
+gem 'puma', '~> 2.13'
 gem 'foreman', '~> 0.78'
 
 gem 'sass-rails', '~> 4.0'
