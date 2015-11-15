@@ -4,7 +4,7 @@ ruby '2.2.3'
 gem 'rails', '4.2.4'
 gem 'pg', '~> 0.18'
 gem 'dalli', '~> 2.7.4'
-gem 'puma', '~> 2.14'
+gem 'puma', '~> 2.15'
 gem 'foreman', '~> 0.78'
 
 gem 'sass-rails', '~> 4.0'
@@ -30,7 +30,7 @@ gem 'fitgem', '~> 0.12'
 gem 'meetup_client', github: 'codebender/meetup_client', branch: 'rails-4-2'
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.3'
+  gem 'rspec-rails', '~> 3.4'
   gem 'dotenv-rails', '~> 0.11'
   gem 'codeclimate-test-reporter', require: false
   gem 'awesome_print'
