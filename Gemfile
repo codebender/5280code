@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.2.3'
 
-gem 'rails', '4.2.4'
+gem 'rails', '4.2.5'
 gem 'pg', '~> 0.18'
 gem 'dalli', '~> 2.7.4'
 gem 'puma', '~> 2.15'
